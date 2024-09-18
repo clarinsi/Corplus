@@ -1,0 +1,602 @@
+{
+    "Index": {
+        "title": "Kost 2.0",
+        "subtitle": "Korpus slovenščine kot tujega jezika",
+        "stats": {
+            "words": "pojavnic",
+            "sentences": "povedi",
+            "paragraphs": "besedil",
+            "paragraphs-corrected": "besedil s popravki"
+        }
+    },
+    "SearchResults": {
+        "filters-title": "Filtri",
+        "filters": {
+            "lemma-forms": "Osnovne oblike",
+            "first-lang": "Prvi jezik tvorca",
+            "task-setting": "Okoliščine nastanka",
+            "profic-slv": "Nivo",
+            "program-type": "Program",
+            "input-type": "Napisano",
+            "errors": "Napake",
+            "wordClass": "Besedna vrsta"
+        },
+        "no-results": "Ni zadetkov"
+    },
+    "SearchInfo": {
+        "ORIG": "iskanje po izvornih besedilih",
+        "CORR": "iskanje po popravljenih besedilih",
+        "size": "velikost korpusa: {count} pojavnic",
+        "error": "napaka pri nalaganju podatkov"
+    },
+    "Header": {
+        "about": "O korpusu",
+        "all-sources": "Vsi viri",
+        "all-sources-menu": {
+            "sloleks": {
+                "title": "Sloleks 2.0",
+                "subtitle": "Slovenski oblikoslovni leksikon"
+            },
+            "gigafida": {
+                "title": "Gigafida 2.0",
+                "subtitle": "Korpus pisne standardne slovenščine"
+            },
+            "gos": {
+                "title": "Gos 2.0",
+                "subtitle": "Korpus govorjene slovenščine"
+            }
+        }
+    },
+    "Footer": {
+        "title": {
+            "issued-by": "Izdal",
+            "manager": "Upravljanje vira",
+            "supporters": "Podporniki",
+            "source": "Prenos vira",
+            "accessibility": "Dostopnost vira",
+            "info": "Informacije o viru",
+            "phone": "Telefon",
+            "email": "E-pošta"
+        },
+        "body": {
+            "accessibility": "Delo je dostopno pod licenco Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)",
+            "cjvt": "Center za jezikovne vire \nin tehnologije",
+            "phone": "+386 1 479 82 99",
+            "email": "info@cjvt.si",
+            "address": "Večna pot 113\nSI-1000 Ljubljana"
+        },
+        "accessibility": {
+            "uni": "Univerza v Ljubljani",
+            "mzk": "Ministrstvo za kulturo",
+            "clarin": "CLARIN.SI",
+            "cjvt": "Center za jezikovne vire in tehnologije"
+        }
+    },
+    "Search": {
+        "tab": {
+            "basic": "Iskanje",
+            "collocations": "Okolica",
+            "list": "Seznam",
+            "ORIG": {
+                "short": "Po izvornih",
+                "long": "po izvornih besedilih"
+            },
+            "CORR": {
+                "short": "Po popravljenih",
+                "long": "po popravljenih besedilih"
+            }
+        },
+        "type": {
+            "basic": {
+                "name": "Osnovno iskanje",
+                "using": "Uporabljaš osnovno iskanje",
+                "extra": "null",
+                "examples": [
+                    {
+                        "query": "rdeča jagoda",
+                        "description": "<i>rdeča jagoda, rdeče jagode, rdeči jagodi</i>"
+                    },
+                    {
+                        "query": "\"rdečimi jagodami\"",
+                        "description": "<i>rdečimi jagodami</i>"
+                    }
+                ]
+            },
+            "collocations": {
+                "name": "Okolica",
+                "using": "Uporabljaš iskanje v okolici",
+                "extra": "<b>Okolico</b> določimo s klikom na kvadrate ob iskalnem okencu",
+                "examples": [
+                    {
+                        "query": "medvedki",
+                        "description": "besede, ki se pojavljajo v okolici oblik <i>medvedek, medvedka, medvedku, medvedkom ...</i>"
+                    },
+                    {
+                        "query": "\"medvedku\"",
+                        "description": "besede, ki se pojavljajo v okolici oblike <i>medvedku</i>"
+                    }
+                ]
+            },
+            "list": {
+                "name": "Seznam",
+                "using": "Uporabljaš iskanje po seznamih",
+                "extra": "null",
+                "examples": [
+                    {
+                        "query": "*pisati",
+                        "description": "pisati, <b>na</b>pisati, <b>za</b>pisati, <b>pod</b>pisati ..."
+                    },
+                    {
+                        "query": "?pisati",
+                        "description": "<b>v</b>pisati, <b>o</b>pisati, <b>s</b>pisati ..."
+                    }
+                ]
+            },
+            "advanced": "Napredno iskanje"
+        },
+        "history": {
+            "title": "Zgodovina iskanja"
+        },
+        "advanced": {
+            "conditions": "Pogoji iskanja",
+            "conditions-extra": "Dodatni pogoji iskanja",
+            "search": "Išči",
+            "search-word": "Iskana beseda",
+            "search-mode": "Način iskanja",
+            "word": "Beseda",
+            "word-category": "Besedna vrsta",
+            "insert-word": "Vpiši besedo",
+            "addContext": "Beseda v okolici",
+            "reset": "Ponastavi",
+            "remove": "Odstrani",
+            "searchMethod": "Način iskanja",
+            "forms": {
+                "lemma": "Vse oblike besed",
+                "text": "Samo vpisana oblika"
+            },
+            "distanceTitle": "Oddaljenost",
+            "distanceWord": "iskana beseda",
+            "distanceMode": {
+                "range": "Določi oddaljenost",
+                "exact": "Določi točno mesto"
+            },
+            "excludeCategory": {
+                "false": "je",
+                "true": "ni"
+            },
+            "context": {
+                "title": "V okolici",
+                "false": "je beseda",
+                "true": "ni besede"
+            }
+        }
+    },
+    "Buttons": {
+        "Lang": {
+            "sl": "Slovenščina",
+            "en": "English"
+        },
+        "Texts": {
+            "all": "Vsa besedila",
+            "with-error": "Besedila s popravki"
+        },
+        "FirstLang": {
+            "label": "Prvi jezik govorca"
+        },
+        "Errors": {
+            "label": "Tip popravka"
+        }
+    },
+    "Metadata": {
+        "topic": "Naslov besedila",
+        "academicYear": "Leto nastanka",
+        "taskSetting": "Okoliščine nastanka",
+        "proficSlv": "Nivo",
+        "programType": "Program",
+        "inputType": "Napisano",
+        "firstLang": "Prvi jezik",
+        "textCode": "Koda besedila",
+        "instruction": "Navodilo za pisanje",
+        "creationDate": "Datum nastanka",
+        "subProgram": "Podprogram",
+        "author": "Koda tvorca",
+        "sex": "Spol tvorca",
+        "yearOfBirth": "Leto rojstva",
+        "employmentStatus": "Status",
+        "completedEducation": "Izobrazba",
+        "currentSchool": "Trenutno šolanje",
+        "country": "Država",
+        "otherLang": "Ostali jeziki"
+    },
+    "Filters": {
+        "Common": {
+            "no-results": "Ni zadetkov"
+        },
+        "Statistics": {
+            "title": "Pri prikazovanju statistik v levem stolpcu sta na voljo dve možnosti:",
+            "option1": "pogostost oz. število konkordanc glede na določeno kategorijo filtra (privzeta nastavitev)",
+            "option2": "relativna pogostost (na milijon besed), ki se izračuna tako, da delimo število pojavitev iskanega pogoja v določeni kategoriji filtra s številom vseh pojavnic te kategorije."
+        },
+        "Mode": {
+            "exact": "Samo vpisana oblika",
+            "lemma": "Vse oblike besed"
+        },
+        "Category": {
+            "unset": "besedna vrsta",
+            "S": "samostalnik",
+            "G": "glagol",
+            "P": "pridevnik",
+            "R": "prislov",
+            "Z": "zaimek",
+            "K": "števnik",
+            "D": "predlog",
+            "V": "veznik",
+            "L": "členek",
+            "M": "medmet",
+            "O": "okrajšava",
+            "N": "neuvrščeno",
+            "U": "ločilo"
+        },
+        "Schema": {
+            "NounType": {
+                "title": "Vrsta",
+                "o": "Občno ime",
+                "l": "Lastno ime"
+            },
+            "Gender": {
+                "title": "Spol",
+                "m": "Moški",
+                "z": "Ženski",
+                "s": "Srednji"
+            },
+            "Number": {
+                "title": "Število",
+                "e": "Ednina",
+                "d": "Dvojina",
+                "m": "Množina"
+            },
+            "Case": {
+                "title": "Sklon",
+                "i": "Imenovalnik",
+                "r": "Rodilnik",
+                "d": "Dajalnik",
+                "t": "Tožilnik",
+                "m": "Mestnik",
+                "o": "Orodnik"
+            },
+            "Animate": {
+                "title": "Živost",
+                "n": "Ne",
+                "d": "Da"
+            },
+            "VerbType": {
+                "title": "Vrsta",
+                "g": "Glavni",
+                "p": "Pomožni"
+            },
+            "AdjType": {
+                "title": "Vrsta",
+                "p": "Splošni",
+                "s": "Svojilni",
+                "d": "Deležniški"
+            },
+            "Aspect": {
+                "title": "Vid",
+                "d": "Dovršni",
+                "n": "Nedovršni",
+                "v": "Dvovidski"
+            },
+            "VerbForm": {
+                "title": "Oblika",
+                "n": "Nedoločnik",
+                "m": "Namenilnik",
+                "d": "Deležnik",
+                "s": "Sedanjik",
+                "p": "Prihodnjik",
+                "g": "Pogojnik",
+                "v": "Velelnik"
+            },
+            "Person": {
+                "title": "Oseba",
+                "p": "Prva",
+                "d": "Druga",
+                "t": "Tretja"
+            },
+            "Negative": {
+                "title": "Nikalnost",
+                "n": "Nezanikani",
+                "d": "Zanikani"
+            },
+            "Degree": {
+                "title": "Stopnja",
+                "n": "Nedoločeno",
+                "p": "Primernik",
+                "s": "Presežnik"
+            },
+            "Definiteness": {
+                "title": "Določnost",
+                "n": "Ne",
+                "d": "Da"
+            },
+            "AdvType": {
+                "title": "Vrsta",
+                "s": "Splošni",
+                "d": "Deležje"
+            },
+            "AdvDegree": {
+                "title": "Stopnja",
+                "n": "Nedoločeno",
+                "r": "Primernik",
+                "s": "Presežnik"
+            },
+            "PronType": {
+                "title": "Vrsta",
+                "o": "Osebni",
+                "s": "Svojilni",
+                "k": "Kazalni",
+                "z": "Oziralni",
+                "p": "Povratni",
+                "c": "Celostni",
+                "v": "Vprašalni",
+                "n": "Nedoločni",
+                "l": "Nikalni"
+            },
+            "OwnerNumber": {
+                "title": "Število",
+                "e": "Ednina",
+                "d": "Dvojina",
+                "m": "Množina"
+            },
+            "OwnerGender": {
+                "title": "Spol",
+                "m": "Moški",
+                "z": "Ženski",
+                "s": "Srednji"
+            },
+            "Clitic": {
+                "title": "Naslonskost",
+                "k": "Klitična",
+                "z": "Navezna"
+            },
+            "NumForm": {
+                "title": "Zapis",
+                "a": "Arabski",
+                "r": "Rimski",
+                "b": "Besedni"
+            },
+            "NumType": {
+                "title": "Vrsta",
+                "g": "Glavni",
+                "v": "Vrstilni",
+                "z": "Zaimkovni",
+                "d": "Drugi"
+            },
+            "ConjType": {
+                "title": "Vrsta",
+                "p": "Priredni",
+                "d": "Podredni"
+            }
+        },
+        "Errors": {
+            "Z-LOC": "Zapis/ločilo",
+            "Z-CRK": "Zapis/črkovanje",
+            "Z-SN": "Zapis/skupaj/narazen",
+            "Z-MV": "Zapis/mala/velika začetnica",
+            "Z-KR": "Zapis/krajšave",
+            "B-SAM": "Besedišče/samostalnik",
+            "B-GLAG": "Besedišče/glagol",
+            "B-ZAIM": "Besedišče/zaimek",
+            "B-PRID": "Besedišče/pridevnik",
+            "B-PRISL": "Besedišče/prislov",
+            "B-PRED": "Besedišče/predlog",
+            "B-VEZ": "Besedišče/veznik",
+            "B-OST": "Besedišče/ostalo",
+            "O-SAM": "Oblika/samostalnik",
+            "O-GLAG": "Oblika/glagol",
+            "O-ZAIM": "Oblika/zaimek",
+            "O-PRID": "Oblika/pridevnik",
+            "O-PRISL": "Oblika/prislov",
+            "O-OST": "Oblika/ostalo",
+            "S-STR": "Skladnja/struktura",
+            "S-BR": "Skladnja/besedni red",
+            "S-IZP": "Skladnja/izpuščeni jezikovni elementi",
+            "S-ODV": "Skladnja/odvečni jezikovni elementi",
+            "POV": "Ostalo/povezani popravki",
+            "[???]": "Ostalo/neznano"
+        }
+    },
+    "ErrorCodes": {
+        "Z-LOC": {
+            "category": "zapis",
+            "name": "ločilo"
+        },
+        "Z-CRK": {
+            "category": "zapis",
+            "name": "črkovanje"
+        },
+        "Z-SN": {
+            "category": "zapis",
+            "name": "skupaj/narazen"
+        },
+        "Z-MV": {
+            "category": "zapis",
+            "name": "mala/velika začetnica"
+        },
+        "Z-KR": {
+            "category": "zapis",
+            "name": "krajšave"
+        },
+        "B-SAM": {
+            "category": "besedišče",
+            "name": "samostalnik"
+        },
+        "B-GLAG": {
+            "category": "besedišče",
+            "name": "glagol"
+        },
+        "B-ZAIM": {
+            "category": "besedišče",
+            "name": "zaimek"
+        },
+        "B-PRID": {
+            "category": "besedišče",
+            "name": "pridevnik"
+        },
+        "B-PRISL": {
+            "category": "besedišče",
+            "name": "prislov"
+        },
+        "B-PRED": {
+            "category": "besedišče",
+            "name": "predlog"
+        },
+        "B-VEZ": {
+            "category": "besedišče",
+            "name": "veznik"
+        },
+        "B-OST": {
+            "category": "besedišče",
+            "name": "ostalo"
+        },
+        "O-SAM": {
+            "category": "oblika",
+            "name": "samostalnik"
+        },
+        "O-GLAG": {
+            "category": "oblika",
+            "name": "glagol"
+        },
+        "O-ZAIM": {
+            "category": "oblika",
+            "name": "zaimek"
+        },
+        "O-PRID": {
+            "category": "oblika",
+            "name": "pridevnik"
+        },
+        "O-PRISL": {
+            "category": "oblika",
+            "name": "prislov"
+        },
+        "O-OST": {
+            "category": "oblika",
+            "name": "ostalo"
+        },
+        "S-STR": {
+            "category": "skladnja",
+            "name": "struktura"
+        },
+        "S-BR": {
+            "category": "skladnja",
+            "name": "besedni red"
+        },
+        "S-IZP": {
+            "category": "skladnja",
+            "name": "izpuščeni jezikovni elementi"
+        },
+        "S-ODV": {
+            "category": "skladnja",
+            "name": "odvečni jezikovni elementi"
+        },
+        "POV": {
+            "category": "ostalo",
+            "name": "povezani popravki"
+        },
+        "[???]": {
+            "category": "ostalo",
+            "name": "neznano"
+        }
+    },
+    "Collocation": {
+        "table": {
+            "words": "beseda v okolici",
+            "count": "pojavitve v okolici",
+            "totalCount": "pojavitve v korpusu",
+            "logDice": "logDice",
+            "errCount": "št. popravkov / napak"
+        }
+    },
+    "List": {
+        "btn": {
+            "basic-forms": "Osnovne oblike",
+            "all-forms": "Vse oblike",
+            "ana": "Loči besede glede na oblikoslovne lastnosti"
+        },
+        "table": {
+            "form": "Oblika",
+            "basic-form": "Osnovna oblika",
+            "count": "Število pojavitev",
+            "err-count": "Število napak",
+            "ana": "Oblikoslovne lastnosti besede"
+        }
+    },
+    "NotFound": {
+        "title": "Neznana poizvedba",
+        "body": "Iskana lema ne obstaja."
+    },
+    "Pagination": {
+        "concordance": "konkordanc",
+        "results": "besed"
+    },
+    "Paragraph": {
+        "heading": "Korpusni podatki",
+        "compare": "Primerjava",
+        "orig": "Izvorno besedilo",
+        "corr": "Popravljeno besedilo",
+        "meta": "Metapodatki",
+        "errorType": "Tip napake",
+        "details": {
+            "word": "Beseda",
+            "lemma": "Osnovna oblika",
+            "lemmaFeatures": "Značilnosti osnovne oblike",
+            "correctedType": "Tip popravka"
+        }
+    },
+    "ViewControl": {
+        "orig": "Izvorno",
+        "corr": "Popravljeno"
+    },
+    "Export": {
+        "filename": "kost",
+        "basic": "iskanje",
+        "collocation": "okolica",
+        "list": "seznam",
+        "title": "Kost 2.0",
+        "corpus": "Korpus:",
+        "size": "Velikost korpusa:",
+        "searchSource": {
+            "type": "Vir iskanja:",
+            "ORIG": "izvorna besedila",
+            "CORR": "popravljena besedila"
+        },
+        "searchType": {
+            "type": "Tip iskanja:",
+            "basic": "Osnovno iskanje",
+            "collocations": "Okolica",
+            "list": "Seznam"
+        },
+        "searchTerm": "Poizvedba:",
+        "filters": "Filtri: ",
+        "display": {
+            "type": "Prikaz:",
+            "orig": "izvorne povedi",
+            "corr": "popravljene povedi"
+        },
+        "sentence": "poved",
+        "sentenceType": "vrsta povedi",
+        "errorType": "tip popravka / napake",
+        "advContext": "Okolica: ",
+        "Lemma": "Lema: ",
+        "NotInContext": "Ni v okolici: ",
+        "Mode": "Način iskanja: ",
+        "Category": "Besedna vrsta: ",
+        "ExcludeCategory": "Izključi besedno vrsto: ",
+        "DistanceMode": "Način oddaljenosti: ",
+        "LeftDistance": "Leva oddaljenost: ",
+        "RightDistance": "Desna oddaljenost: ",
+        "exact": "Točno mesto",
+        "range": "Razpon",
+        "orig": "izvorna",
+        "corr": "popravljena"
+    }
+}

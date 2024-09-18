@@ -1,0 +1,602 @@
+{
+    "Index": {
+        "title": "Kost 2.0",
+        "subtitle": "Slovene Learner Corpus",
+        "stats": {
+            "words": "words",
+            "sentences": "sentences",
+            "paragraphs": "texts",
+            "paragraphs-corrected": "texts with corrections"
+        }
+    },
+    "SearchResults": {
+        "filters-title": "Filters",
+        "filters": {
+            "lemma-forms": "Basic forms",
+            "first-lang": "Author's first language",
+            "task-setting": "Task setting",
+            "profic-slv": "Proficiency",
+            "program-type": "Programme",
+            "input-type": "Input type",
+            "errors": "Correction type",
+            "wordClass": "Part of speech"
+        },
+        "no-results": "No results"
+    },
+    "SearchInfo": {
+        "ORIG": "search in original texts",
+        "CORR": "search in corrected texts",
+        "size": "corpus size: {count} words",
+        "error": "data processing error"
+    },
+    "Header": {
+        "about": "About",
+        "all-sources": "All resources",
+        "all-sources-menu": {
+            "sloleks": {
+                "title": "Sloleks 2.0",
+                "subtitle": "Slovene Morphological Lexicon"
+            },
+            "gigafida": {
+                "title": "Gigafida 2.0",
+                "subtitle": "Corpus of Written Standard Slovene"
+            },
+            "gos": {
+                "title": "Gos 2.0",
+                "subtitle": "Corpus of Spoken Slovene"
+            }
+        }
+    },
+    "Footer": {
+        "title": {
+            "issued-by": "Issued by",
+            "manager": "Provided by",
+            "supporters": "Supported by",
+            "source": "Download",
+            "accessibility": "Licence",
+            "info": "Information",
+            "phone": "Phone",
+            "email": "Email"
+        },
+        "body": {
+            "accessibility": "This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)",
+            "cjvt": "Center za jezikovne vire \nin tehnologije",
+            "phone": "+386 1 479 82 99",
+            "email": "info@cjvt.si",
+            "address": "Večna pot 113\nSI-1000 Ljubljana"
+        },
+        "accessibility": {
+            "uni": "University of Ljubljana",
+            "mzk": "Ministry of Culture",
+            "clarin": "CLARIN.SI",
+            "cjvt": "Centre for language resources and technologies"
+        }
+    },
+    "Search": {
+        "tab": {
+            "basic": "Search",
+            "collocations": "Collocations",
+            "list": "List",
+            "ORIG": {
+                "short": "Original",
+                "long": "in original texts"
+            },
+            "CORR": {
+                "short": "Corrected",
+                "long": "in corrected texts"
+            }
+        },
+        "type": {
+            "basic": {
+                "name": "Simple search",
+                "using": "You are using simple search",
+                "extra": "null",
+                "examples": [
+                    {
+                        "query": "rdeča jagoda",
+                        "description": "<i>rdeča jagoda, rdeče jagode, rdeči jagodi</i>"
+                    },
+                    {
+                        "query": "\"rdečimi jagodami\"",
+                        "description": "<i>rdečimi jagodami</i>"
+                    }
+                ]
+            },
+            "collocations": {
+                "name": "Collocations",
+                "using": "You are using collocations search",
+                "extra": "<b>Search span</b> is specified by clicking on squares to the left/right of the search window.",
+                "examples": [
+                    {
+                        "query": "medvedki",
+                        "description": "collocations of word forms <i>medvedek, medvedka, medvedku, medvedkom ...</i>"
+                    },
+                    {
+                        "query": "\"medvedku\"",
+                        "description": "collocations of the word form <i>medvedku</i>"
+                    }
+                ]
+            },
+            "list": {
+                "name": "List",
+                "using": "You are using list search",
+                "extra": "null",
+                "examples": [
+                    {
+                        "query": "*pisati",
+                        "description": "pisati, <b>na</b>pisati, <b>za</b>pisati, <b>pod</b>pisati ..."
+                    },
+                    {
+                        "query": "?pisati",
+                        "description": "<b>v</b>pisati, <b>o</b>pisati, <b>s</b>pisati ..."
+                    }
+                ]
+            },
+            "advanced": "Advanced search"
+        },
+        "history": {
+            "title": "Search history"
+        },
+        "advanced": {
+            "conditions": "Search the word",
+            "conditions-extra": "Additional conditions",
+            "search": "Search",
+            "search-word": "Search the word",
+            "search-mode": "Search type",
+            "word": "Word",
+            "word-category": "part of speech",
+            "insert-word": "Type the word",
+            "addContext": "Word in context",
+            "reset": "Reset",
+            "remove": "Remove",
+            "searchMethod": "Search method",
+            "forms": {
+                "lemma": "all word forms",
+                "text": "only this word form"
+            },
+            "distanceTitle": "Distance",
+            "distanceWord": "search word",
+            "distanceMode": {
+                "range": "Specify distance",
+                "exact": "Specify position"
+            },
+            "excludeCategory": {
+                "false": "is",
+                "true": "is not"
+            },
+            "context": {
+                "title": "In context",
+                "false": "word exists",
+                "true": "word doesn't exist"
+            }
+        }
+    },
+    "Buttons": {
+        "Lang": {
+            "sl": "Slovenščina",
+            "en": "English"
+        },
+        "Texts": {
+            "all": "All texts",
+            "with-error": "Texts with corrections"
+        },
+        "FirstLang": {
+            "label": "Author's first language"
+        },
+        "Errors": {
+            "label": "Correction type"
+        }
+    },
+    "Metadata": {
+        "topic": "Title",
+        "academicYear": "Year",
+        "taskSetting": "Task setting",
+        "proficSlv": "Proficiency",
+        "programType": "Programme",
+        "inputType": "Input type",
+        "firstLang": "First language",
+        "textCode": "Text ID",
+        "instruction": "Instruction",
+        "creationDate": "Creation date",
+        "subProgram": "Programme subtype",
+        "author": "Author ID",
+        "sex": "Gender",
+        "yearOfBirth": "Year of birth",
+        "employmentStatus": "Employment status",
+        "completedEducation": "Completed education",
+        "currentSchool": "Current school",
+        "country": "Country",
+        "otherLang": "Knowledge of other languages"
+    },
+    "Filters": {
+        "Common": {
+            "no-results": "No results"
+        },
+        "Statistics": {
+            "title": "The statistics shown in the left column are of two types:",
+            "option1": "frequency (number of occurrences) for a particular category in each filter (default setting)",
+            "option2": "relative frequency (per million words) which is calculated by dividing the number of occurrences of the searched item in a particular filter category by the total number of tokens of that category."
+        },
+        "Mode": {
+            "exact": "Only this word form",
+            "lemma": "All word forms"
+        },
+        "Category": {
+            "unset": "Part of speech",
+            "S": "noun",
+            "G": "verb",
+            "P": "adjective",
+            "R": "adverb",
+            "Z": "pronoun",
+            "K": "numeral",
+            "D": "preposition",
+            "V": "conjunction",
+            "L": "particle",
+            "M": "interjection",
+            "O": "abbreviation",
+            "N": "residual",
+            "U": "punctuation"
+        },
+        "Schema": {
+            "NounType": {
+                "title": "Type",
+                "o": "common",
+                "l": "proper"
+            },
+            "Gender": {
+                "title": "Gender",
+                "m": "masculine",
+                "z": "feminine",
+                "s": "neuter"
+            },
+            "Number": {
+                "title": "Number",
+                "e": "singular",
+                "d": "dual",
+                "m": "plural"
+            },
+            "Case": {
+                "title": "Case",
+                "i": "nominative",
+                "r": "genitive",
+                "d": "dative",
+                "t": "accusative",
+                "m": "locative",
+                "o": "instrumental"
+            },
+            "Animate": {
+                "title": "Animate",
+                "n": "no",
+                "d": "yes"
+            },
+            "VerbType": {
+                "title": "Type",
+                "g": "main",
+                "p": "auxiliary"
+            },
+            "AdjType": {
+                "title": "Tyle",
+                "p": "general",
+                "s": "possessive",
+                "d": "participle"
+            },
+            "Aspect": {
+                "title": "Aspect",
+                "d": "perfective",
+                "n": "progressive",
+                "v": "biaspectual"
+            },
+            "VerbForm": {
+                "title": "Form",
+                "n": "infinitive",
+                "m": "supine",
+                "d": "participle",
+                "s": "present",
+                "p": "future",
+                "g": "conditional",
+                "v": "imperative"
+            },
+            "Person": {
+                "title": "Person",
+                "p": "first",
+                "d": "second",
+                "t": "third"
+            },
+            "Negative": {
+                "title": "negative",
+                "n": "no",
+                "d": "yes"
+            },
+            "Degree": {
+                "title": "Degree",
+                "n": "positive",
+                "p": "comparative",
+                "s": "superlative"
+            },
+            "Definiteness": {
+                "title": "Definiteness",
+                "n": "no",
+                "d": "yes"
+            },
+            "AdvType": {
+                "title": "Type",
+                "s": "general",
+                "d": "participle"
+            },
+            "AdvDegree": {
+                "title": "Degree",
+                "n": "positive",
+                "r": "comparative",
+                "s": "superlative"
+            },
+            "PronType": {
+                "title": "Type",
+                "o": "personal",
+                "s": "possessive",
+                "k": "demonstrative",
+                "z": "relative",
+                "p": "reflexive",
+                "c": "general",
+                "v": "interrogative",
+                "n": "indefinite",
+                "l": "negative"
+            },
+            "OwnerNumber": {
+                "title": "Number",
+                "e": "singular",
+                "d": "dual",
+                "m": "plural"
+            },
+            "OwnerGender": {
+                "title": "Gender",
+                "m": "masculine",
+                "z": "feminine",
+                "s": "neuter"
+            },
+            "Clitic": {
+                "title": "Clitic",
+                "k": "yes",
+                "z": "bound"
+            },
+            "NumForm": {
+                "title": "Form",
+                "a": "digit",
+                "r": "roman",
+                "b": "letter"
+            },
+            "NumType": {
+                "title": "Type",
+                "g": "cardinal",
+                "v": "ordinal",
+                "z": "pronominal",
+                "d": "special"
+            },
+            "ConjType": {
+                "title": "Type",
+                "p": "coordinating",
+                "d": "subordinating"
+            }
+        },
+        "Errors": {
+            "Z-LOC": "Orthography/punctuation",
+            "Z-CRK": "Orthography/spelling",
+            "Z-SN": "Orthography/joined/divided",
+            "Z-MV": "Orthography/capitalization",
+            "Z-KR": "Orthography/abbreviation",
+            "B-SAM": "Vocabulary/noun",
+            "B-GLAG": "Vocabulary/verb",
+            "B-ZAIM": "Vocabulary/pronoun",
+            "B-PRID": "Vocabulary/adjective",
+            "B-PRISL": "Vocabulary/adverb",
+            "B-PRED": "Vocabulary/preposition",
+            "B-VEZ": "Vocabulary/conjunction",
+            "B-OST": "Vocabulary/other",
+            "O-SAM": "Word form/noun",
+            "O-GLAG": "Word form/verb",
+            "O-ZAIM": "Word form/pronoun",
+            "O-PRID": "Word form/adjective",
+            "O-PRISL": "Word form/adverb",
+            "O-OST": "Word form/other",
+            "S-STR": "Syntax/structure",
+            "S-BR": "Syntax/word order",
+            "S-IZP": "Syntax/omission",
+            "S-ODV": "Syntax/insertion",
+            "POV": "Other/related correction",
+            "[???]": "incomprehensible/unclear"
+        }
+    },
+    "ErrorCodes": {
+        "Z-LOC": {
+            "category": "orthography",
+            "name": "punctuation"
+        },
+        "Z-CRK": {
+            "category": "orthography",
+            "name": "spelling"
+        },
+        "Z-SN": {
+            "category": "orthography",
+            "name": "joined/divided"
+        },
+        "Z-MV": {
+            "category": "orthography",
+            "name": "capitalization"
+        },
+        "Z-KR": {
+            "category": "orthography",
+            "name": "abbreviation"
+        },
+        "B-SAM": {
+            "category": "vocabulary",
+            "name": "noun"
+        },
+        "B-GLAG": {
+            "category": "vocabulary",
+            "name": "verb"
+        },
+        "B-ZAIM": {
+            "category": "vocabulary",
+            "name": "pronoun"
+        },
+        "B-PRID": {
+            "category": "vocabulary",
+            "name": "adjective"
+        },
+        "B-PRISL": {
+            "category": "vocabulary",
+            "name": "adverb"
+        },
+        "B-PRED": {
+            "category": "vocabulary",
+            "name": "preposition"
+        },
+        "B-VEZ": {
+            "category": "vocabulary",
+            "name": "conjunction"
+        },
+        "B-OST": {
+            "category": "vocabulary",
+            "name": "other"
+        },
+        "O-SAM": {
+            "category": "word form",
+            "name": "noun"
+        },
+        "O-GLAG": {
+            "category": "word form",
+            "name": "verb"
+        },
+        "O-ZAIM": {
+            "category": "word form",
+            "name": "pronoun"
+        },
+        "O-PRID": {
+            "category": "word form",
+            "name": "adjective"
+        },
+        "O-PRISL": {
+            "category": "word form",
+            "name": "adverb"
+        },
+        "O-OST": {
+            "category": "word form",
+            "name": "other"
+        },
+        "S-STR": {
+            "category": "syntax",
+            "name": "structure"
+        },
+        "S-BR": {
+            "category": "syntax",
+            "name": "word order"
+        },
+        "S-IZP": {
+            "category": "syntax",
+            "name": "omission"
+        },
+        "S-ODV": {
+            "category": "syntax",
+            "name": "insertion"
+        },
+        "POV": {
+            "category": "other",
+            "name": "related correction"
+        },
+        "[???]": {
+            "category": "other",
+            "name": "incomprehensible/unclear"
+        }
+    },
+    "Collocation": {
+        "table": {
+            "words": "Word in context",
+            "count": "Frequency in context",
+            "totalCount": "Frequency in corpus",
+            "logDice": "LogDice",
+            "errCount": "Correction frequency"
+        }
+    },
+    "List": {
+        "btn": {
+            "basic-forms": "Basic forms",
+            "all-forms": "All forms",
+            "ana": "Distinguish words by morphological properties"
+        },
+        "table": {
+            "form": "Form",
+            "basic-form": "Basic form",
+            "count": "Frequency",
+            "err-count": "Correction frequency",
+            "ana": "Morphosyntactic features"
+        }
+    },
+    "NotFound": {
+        "title": "Unknown query",
+        "body": "The searched lemma does not appear in the corpus."
+    },
+    "Pagination": {
+        "concordance": "concordances",
+        "results": "words"
+    },
+    "Paragraph": {
+        "heading": "Corpus data",
+        "compare": "Paragraph",
+        "orig": "Annotation: original text",
+        "corr": "Annotation: corrected text",
+        "meta": "Metadata",
+        "errorType": "Correction type",
+        "details": {
+            "word": "Word",
+            "lemma": "Basic form",
+            "lemmaFeatures": "Morphological properties",
+            "correctedType": "Correction type"
+        }
+    },
+    "ViewControl": {
+        "orig": "Original",
+        "corr": "Corrected"
+    },
+    "Export": {
+        "filename": "kost",
+        "basic": "search",
+        "collocation": "collocations",
+        "list": "list",
+        "title": "Kost 2.0",
+        "corpus": "Corpus:",
+        "size": "Corpus size:",
+        "searchSource": {
+            "type": "Source:",
+            "ORIG": "original texts",
+            "CORR": "corrected texts"
+        },
+        "searchType": {
+            "type": "Query type:",
+            "basic": "simple search",
+            "collocations": "collocations search",
+            "list": "list search"
+        },
+        "searchTerm": "Query:",
+        "filters": "Filters: ",
+        "display": {
+            "type": "Display:",
+            "orig": "original sentences",
+            "corr": "corrected sentences"
+        },
+        "sentence": "Sentence",
+        "sentenceType": "Sentence type",
+        "errorType": "Correction type",
+        "advContext": "Word in proximity: ",
+        "Lemma": "Lemma: ",
+        "NotInContext": "Word not in proximity: ",
+        "Mode": "Search with the use of: ",
+        "Category": "Part-of-speech: ",
+        "ExcludeCategory": "Excluding part-of-speech: ",
+        "DistanceMode": "Distance type: ",
+        "LeftDistance": "Left span: ",
+        "RightDistance": "Right span: ",
+        "exact": "exact place",
+        "range": "span",
+        "orig": "original",
+        "corr": "corrected"
+    }
+}

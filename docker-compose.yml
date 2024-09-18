@@ -1,0 +1,19 @@
+services:
+    db:
+        image: postgres:16-alpine
+        shm_size: 4g
+        environment:
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=postgres
+        ports:
+            - "5432:5432"
+        volumes:
+            - db:/var/lib/postgresql/data
+        command: [
+          "postgres",
+          "-c",
+          "track_activity_query_size=1048576",
+        ]
+volumes:
+    db:
+        driver: local

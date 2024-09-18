@@ -1,0 +1,51 @@
+.headline-l {
+    @apply font-semibold text-3xl
+}
+
+.headline-m {
+    @apply font-light text-2xl tracking-[0.024rem]
+}
+
+.headline-s {
+    @apply font-bold text-2xl
+}
+
+.title {
+    @apply font-semibold text-xl tracking-[0.02rem]
+}
+
+.title-m {
+    @apply text-lg font-light tracking-[0.018rem]
+}
+
+.body-1-title {
+    @apply font-semibold text-base tracking-[0.01rem]
+}
+
+.body-1 {
+    @apply font-normal text-base tracking-[0.016rem]
+}
+
+.body-2-title {
+    @apply font-semibold text-sm tracking-[0.00875rem]
+}
+
+.body-2 {
+    @apply font-normal text-sm tracking-[0.014rem]
+}
+
+.callout {
+    @apply font-normal text-sm tracking-[0.014rem]
+}
+
+.caption {
+    @apply font-normal text-xs tracking-[0.024rem]
+}
+
+.caption-emphasised {
+    @apply font-semibold text-xs tracking-[0.012rem]
+}
+
+.example {
+    @apply text-sm font-normal tracking-[0.00525rem] font-serif
+}

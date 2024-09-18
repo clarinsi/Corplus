@@ -1,0 +1,1145 @@
+{
+  "id": "0484b4c7-9020-4d03-ad6c-a0fc744cb97a",
+  "prevId": "00000000-0000-0000-0000-000000000000",
+  "version": "7",
+  "dialect": "postgresql",
+  "tables": {
+    "public.Bibl": {
+      "name": "Bibl",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "Topic": {
+          "name": "Topic",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Instruction": {
+          "name": "Instruction",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "AcademicYear": {
+          "name": "AcademicYear",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "TaskSetting": {
+          "name": "TaskSetting",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "CreationDate": {
+          "name": "CreationDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "ProficSlv": {
+          "name": "ProficSlv",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "ProgramType": {
+          "name": "ProgramType",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "ProgramSubtype": {
+          "name": "ProgramSubtype",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Teacher": {
+          "name": "Teacher",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "InputType": {
+          "name": "InputType",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Grade": {
+          "name": "Grade",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Author": {
+          "name": "Author",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Sex": {
+          "name": "Sex",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "YearOfBirth": {
+          "name": "YearOfBirth",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "EmploymentStatus": {
+          "name": "EmploymentStatus",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "CompletedEducation": {
+          "name": "CompletedEducation",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "CurrentSchool": {
+          "name": "CurrentSchool",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "StudyCycle": {
+          "name": "StudyCycle",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "StudyYear": {
+          "name": "StudyYear",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Country": {
+          "name": "Country",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "FirstLang": {
+          "name": "FirstLang",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "OtherLang": {
+          "name": "OtherLang",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "ExpSlv": {
+          "name": "ExpSlv",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "LocSlvLearning": {
+          "name": "LocSlvLearning",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "DurSlvLearning": {
+          "name": "DurSlvLearning",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "SloveneTextbooks": {
+          "name": "SloveneTextbooks",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "LifeSlovenia": {
+          "name": "LifeSlovenia",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "bibl_TaskSetting_idx": {
+          "name": "bibl_TaskSetting_idx",
+          "columns": [
+            {
+              "expression": "TaskSetting",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "bibl_ProficSlv_idx": {
+          "name": "bibl_ProficSlv_idx",
+          "columns": [
+            {
+              "expression": "ProficSlv",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "bibl_ProgramType_idx": {
+          "name": "bibl_ProgramType_idx",
+          "columns": [
+            {
+              "expression": "ProgramType",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "bibl_InputType_idx": {
+          "name": "bibl_InputType_idx",
+          "columns": [
+            {
+              "expression": "InputType",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "bibl_FirstLang_idx": {
+          "name": "bibl_FirstLang_idx",
+          "columns": [
+            {
+              "expression": "FirstLang",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "public.Err": {
+      "name": "Err",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "type": {
+          "name": "type",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "origWordId": {
+          "name": "origWordId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "corrWordId": {
+          "name": "corrWordId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "origSentenceId": {
+          "name": "origSentenceId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "corrSentenceId": {
+          "name": "corrSentenceId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "origParagraphId": {
+          "name": "origParagraphId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "corrParagraphId": {
+          "name": "corrParagraphId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "groupId": {
+          "name": "groupId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {
+        "err_type_idx": {
+          "name": "err_type_idx",
+          "columns": [
+            {
+              "expression": "type",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "err_origWordId_idx": {
+          "name": "err_origWordId_idx",
+          "columns": [
+            {
+              "expression": "origWordId",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "err_corrWordId_idx": {
+          "name": "err_corrWordId_idx",
+          "columns": [
+            {
+              "expression": "corrWordId",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "err_origSentenceId_idx": {
+          "name": "err_origSentenceId_idx",
+          "columns": [
+            {
+              "expression": "origSentenceId",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "err_corrSentenceId_idx": {
+          "name": "err_corrSentenceId_idx",
+          "columns": [
+            {
+              "expression": "corrSentenceId",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "err_origParagraphId_idx": {
+          "name": "err_origParagraphId_idx",
+          "columns": [
+            {
+              "expression": "origParagraphId",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "err_corrParagraphId_idx": {
+          "name": "err_corrParagraphId_idx",
+          "columns": [
+            {
+              "expression": "corrParagraphId",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "err_type_origWordId_idx": {
+          "name": "err_type_origWordId_idx",
+          "columns": [
+            {
+              "expression": "type",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "origWordId",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "err_type_corrWordId_idx": {
+          "name": "err_type_corrWordId_idx",
+          "columns": [
+            {
+              "expression": "type",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "corrWordId",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "Err_origWordId_Word_id_fk": {
+          "name": "Err_origWordId_Word_id_fk",
+          "tableFrom": "Err",
+          "tableTo": "Word",
+          "columnsFrom": [
+            "origWordId"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "Err_corrWordId_Word_id_fk": {
+          "name": "Err_corrWordId_Word_id_fk",
+          "tableFrom": "Err",
+          "tableTo": "Word",
+          "columnsFrom": [
+            "corrWordId"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "Err_origSentenceId_Sentence_id_fk": {
+          "name": "Err_origSentenceId_Sentence_id_fk",
+          "tableFrom": "Err",
+          "tableTo": "Sentence",
+          "columnsFrom": [
+            "origSentenceId"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "Err_corrSentenceId_Sentence_id_fk": {
+          "name": "Err_corrSentenceId_Sentence_id_fk",
+          "tableFrom": "Err",
+          "tableTo": "Sentence",
+          "columnsFrom": [
+            "corrSentenceId"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "Err_origParagraphId_Paragraph_id_fk": {
+          "name": "Err_origParagraphId_Paragraph_id_fk",
+          "tableFrom": "Err",
+          "tableTo": "Paragraph",
+          "columnsFrom": [
+            "origParagraphId"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "Err_corrParagraphId_Paragraph_id_fk": {
+          "name": "Err_corrParagraphId_Paragraph_id_fk",
+          "tableFrom": "Err",
+          "tableTo": "Paragraph",
+          "columnsFrom": [
+            "corrParagraphId"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "public.CountMeta": {
+      "name": "CountMeta",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "name": {
+          "name": "name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "origCounts": {
+          "name": "origCounts",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "origWithErrCounts": {
+          "name": "origWithErrCounts",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "corrCounts": {
+          "name": "corrCounts",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "corrWithErrCounts": {
+          "name": "corrWithErrCounts",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "public.Paragraph": {
+      "name": "Paragraph",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "type": {
+          "name": "type",
+          "type": "TextSource",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "biblId": {
+          "name": "biblId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "origParagraphId": {
+          "name": "origParagraphId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "paragraph_type_idx": {
+          "name": "paragraph_type_idx",
+          "columns": [
+            {
+              "expression": "type",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "paragraph_biblId_idx": {
+          "name": "paragraph_biblId_idx",
+          "columns": [
+            {
+              "expression": "biblId",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "paragraph_origParagraphId_idx": {
+          "name": "paragraph_origParagraphId_idx",
+          "columns": [
+            {
+              "expression": "origParagraphId",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "Paragraph_biblId_Bibl_id_fk": {
+          "name": "Paragraph_biblId_Bibl_id_fk",
+          "tableFrom": "Paragraph",
+          "tableTo": "Bibl",
+          "columnsFrom": [
+            "biblId"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "Paragraph_origParagraphId_Paragraph_id_fk": {
+          "name": "Paragraph_origParagraphId_Paragraph_id_fk",
+          "tableFrom": "Paragraph",
+          "tableTo": "Paragraph",
+          "columnsFrom": [
+            "origParagraphId"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "public.Sentence": {
+      "name": "Sentence",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "type": {
+          "name": "type",
+          "type": "TextSource",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "biblId": {
+          "name": "biblId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "paragraphId": {
+          "name": "paragraphId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {
+        "sentence_type_idx": {
+          "name": "sentence_type_idx",
+          "columns": [
+            {
+              "expression": "type",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "sentence_biblId_idx": {
+          "name": "sentence_biblId_idx",
+          "columns": [
+            {
+              "expression": "biblId",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "sentence_paragraphId_idx": {
+          "name": "sentence_paragraphId_idx",
+          "columns": [
+            {
+              "expression": "paragraphId",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "Sentence_biblId_Bibl_id_fk": {
+          "name": "Sentence_biblId_Bibl_id_fk",
+          "tableFrom": "Sentence",
+          "tableTo": "Bibl",
+          "columnsFrom": [
+            "biblId"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "Sentence_paragraphId_Paragraph_id_fk": {
+          "name": "Sentence_paragraphId_Paragraph_id_fk",
+          "tableFrom": "Sentence",
+          "tableTo": "Paragraph",
+          "columnsFrom": [
+            "paragraphId"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "public.Word": {
+      "name": "Word",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "type": {
+          "name": "type",
+          "type": "TextSource",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ana": {
+          "name": "ana",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "lemma": {
+          "name": "lemma",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "text": {
+          "name": "text",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "prevContext": {
+          "name": "prevContext",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "nextContext": {
+          "name": "nextContext",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "biblId": {
+          "name": "biblId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "sentenceId": {
+          "name": "sentenceId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {
+        "word_lemma_idx": {
+          "name": "word_lemma_idx",
+          "columns": [
+            {
+              "expression": "lemma",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "word_text_idx": {
+          "name": "word_text_idx",
+          "columns": [
+            {
+              "expression": "text",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "word_ana_idx": {
+          "name": "word_ana_idx",
+          "columns": [
+            {
+              "expression": "ana",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "word_type_idx": {
+          "name": "word_type_idx",
+          "columns": [
+            {
+              "expression": "type",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "word_biblId_idx": {
+          "name": "word_biblId_idx",
+          "columns": [
+            {
+              "expression": "biblId",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "word_sentenceId_idx": {
+          "name": "word_sentenceId_idx",
+          "columns": [
+            {
+              "expression": "sentenceId",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "word_prevContext_idx": {
+          "name": "word_prevContext_idx",
+          "columns": [
+            {
+              "expression": "prevContext",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "word_nextContext_idx": {
+          "name": "word_nextContext_idx",
+          "columns": [
+            {
+              "expression": "nextContext",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "word_lemma_type_text_idx": {
+          "name": "word_lemma_type_text_idx",
+          "columns": [
+            {
+              "expression": "lemma",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "type",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "text",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "word_type_lemma_id_idx": {
+          "name": "word_type_lemma_id_idx",
+          "columns": [
+            {
+              "expression": "type",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "lemma",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "word_type_lemma_idx": {
+          "name": "word_type_lemma_idx",
+          "columns": [
+            {
+              "expression": "type",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "lemma",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "Word_prevContext_Word_id_fk": {
+          "name": "Word_prevContext_Word_id_fk",
+          "tableFrom": "Word",
+          "tableTo": "Word",
+          "columnsFrom": [
+            "prevContext"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "Word_nextContext_Word_id_fk": {
+          "name": "Word_nextContext_Word_id_fk",
+          "tableFrom": "Word",
+          "tableTo": "Word",
+          "columnsFrom": [
+            "nextContext"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "Word_biblId_Bibl_id_fk": {
+          "name": "Word_biblId_Bibl_id_fk",
+          "tableFrom": "Word",
+          "tableTo": "Bibl",
+          "columnsFrom": [
+            "biblId"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "Word_sentenceId_Sentence_id_fk": {
+          "name": "Word_sentenceId_Sentence_id_fk",
+          "tableFrom": "Word",
+          "tableTo": "Sentence",
+          "columnsFrom": [
+            "sentenceId"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    }
+  },
+  "enums": {
+    "public.TextSource": {
+      "name": "TextSource",
+      "schema": "public",
+      "values": [
+        "ORIG",
+        "CORR"
+      ]
+    }
+  },
+  "schemas": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}

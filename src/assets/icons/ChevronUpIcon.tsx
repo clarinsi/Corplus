@@ -1,0 +1,7 @@
+export default function ChevronUpIcon() {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+            <path d="M8 5L13 10L12.3 10.7L8 6.4L3.7 10.7L3 10L8 5Z" className="fill-inherit" />
+        </svg>
+    );
+}
