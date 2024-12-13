@@ -63,7 +63,7 @@ export default function CollocationResults({ currentLemma }: CollocationResultsP
             sortAsc,
         ],
         queryFn: async ({ signal }: { signal: AbortSignal }) =>
-            axios.get(`/api/collocations?${writableSearchParams.toString()}`, { signal }).then((res) => res.data),
+            axios.get(`/api/collocations?${writableSearchParams.toString()}`, { signal, baseURL: process.env.NEXT_PUBLIC_BASE_URL }).then((res) => res.data),
     });
 
     if (isLoading) return <SearchResultsLoader hideViewControl={true} />;

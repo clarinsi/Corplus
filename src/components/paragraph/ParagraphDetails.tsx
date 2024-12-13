@@ -38,7 +38,7 @@ export default function ParagraphDetails({ id, keyword, keywordErrId, sentenceBu
     const { data, isLoading, error } = useQuery<ParagraphData | undefined>({
         queryKey: ["paragraph", id],
         queryFn: async ({ signal }: { signal: AbortSignal }) =>
-            axios.get(`/api/paragraph/${id}?keywordId=${keyword.id}`, { signal }).then((res) => res.data),
+            axios.get(`/api/paragraph/${id}?keywordId=${keyword.id}`, { signal, baseURL: process.env.NEXT_PUBLIC_BASE_URL }).then((res) => res.data),
     });
 
     const onClick = (name: string) => {

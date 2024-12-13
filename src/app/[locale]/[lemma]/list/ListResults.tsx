@@ -73,7 +73,7 @@ export default function ListResults({ currentLemma }: ListResultsProps) {
             sortAsc,
         ],
         queryFn: async ({ signal }: { signal: AbortSignal }) =>
-            axios.get(`/api/list?${writableSearchParams.toString()}`, { signal }).then((res) => res.data),
+            axios.get(`/api/list?${writableSearchParams.toString()}`, { signal, baseURL: process.env.NEXT_PUBLIC_BASE_URL }).then((res) => res.data),
     });
 
     const handleAnaClick = () => {

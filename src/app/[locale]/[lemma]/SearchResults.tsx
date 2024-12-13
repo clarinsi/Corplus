@@ -40,7 +40,7 @@ export default function SearchResults() {
             parsedFilters.formsFilter,
         ],
         queryFn: async ({ signal }: { signal: AbortSignal }) =>
-            axios.get(`/api/search?${searchParams.toString()}`, { signal }).then((res) => res.data),
+            axios.get(`/api/search?${searchParams.toString()}`, { signal, baseURL: process.env.NEXT_PUBLIC_BASE_URL }).then((res) => res.data),
     });
 
     const { data: sentenceContext } = useQuery<Record<string, SentenceContext>>({
@@ -62,7 +62,7 @@ export default function SearchResults() {
             const sentenceIds = data?.data
                 .flatMap((bundle) => [bundle.orig?.id, bundle.corr?.id])
                 .filter((id) => id !== undefined);
-            return axios.get(`/api/sentence/?s=${sentenceIds.join(",")}`, { signal }).then((res) => res.data);
+            return axios.get(`/api/sentence/?s=${sentenceIds.join(",")}`, { signal, baseURL: process.env.NEXT_PUBLIC_BASE_URL }).then((res) => res.data);
         },
     });
 

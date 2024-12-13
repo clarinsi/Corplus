@@ -21,6 +21,7 @@ export default function SearchInfo() {
                     `/api/meta/corpus-size?source=${parsedParams.searchSource}&${TEXTS_FILTER}=${parsedParams.texts}`,
                     {
                         signal,
+                        baseURL: process.env.NEXT_PUBLIC_BASE_URL,
                     },
                 )
                 .then((res) => res.data),

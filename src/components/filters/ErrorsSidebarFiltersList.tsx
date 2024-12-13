@@ -116,7 +116,7 @@ export default function ErrorsSidebarFiltersList({ parsedFilters }: ErrorsSideba
             parsedFilters.context,
         ],
         queryFn: async ({ signal }: { signal: AbortSignal }) =>
-            axios.get(`/api/errs?${searchParams.toString()}`, { signal }).then((res) => res.data),
+            axios.get(`/api/errs?${searchParams.toString()}`, { signal, baseURL: process.env.NEXT_PUBLIC_BASE_URL }).then((res) => res.data),
     });
 
     if (isLoading) return <FilterListLoader titleLangKey="errors" />;

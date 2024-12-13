@@ -115,9 +115,9 @@ export const executeSearch = async (
         if ((searchType === "basic" || searchType === "collocations") && !isMultiWord) {
             // Needed here for lemma-forms fetch request
             newParams.set("type", "basic");
-            const resp = await fetch(`/api/lemma-forms/${lemmaParam}?${newParams.toString()}`);
+            const resp = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/lemma-forms/${lemmaParam}?${newParams.toString()}`);
             if (resp.status !== 200) {
-                window.location.href = `${locale}/404`;
+                window.location.href = `${process.env.NEXT_PUBLIC_BASE_URL}/${locale}/404`;
             }
             const lemmaForms = (await resp.json()) as LemmaForm[];
             newParams.set(LEMMA, lemmaForms.map(({ lemma }) => lemma).join(ADV_FILTERS_SEPARATOR));
@@ -126,9 +126,9 @@ export const executeSearch = async (
         if (searchType === "basic" && isMultiWord) {
             const words = searchQuery.split(" ");
 
-            const response = await fetch(`/api/lemma-forms/bulk/${words.join("/")}?${newParams.toString()}`);
+            const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/lemma-forms/bulk/${words.join("/")}?${newParams.toString()}`);
             if (response.status !== 200) {
-                window.location.href = `${locale}/404`;
+                window.location.href = `${process.env.NEXT_PUBLIC_BASE_URL}/${locale}/404`;
             }
             const json: LemmaFormCount[][] = await response.json();
             const primaryLemmas = json[0].map(({ lemma }) => lemma).join(ADV_FILTERS_SEPARATOR);
@@ -159,7 +159,7 @@ export const executeSearch = async (
     Object.entries(mappedAdvFilters).forEach(([key, value]) => newParams.set(key, value));
 
     const subpage = !skipSubpage ? searchTypeMap[searchType] : "";
-    const url = `/${locale}/${encodeURIComponent(searchQuery ?? "any")}${subpage}?${newParams.toString()}`;
+    const url = `${process.env.NEXT_PUBLIC_BASE_URL}/${locale}/${encodeURIComponent(searchQuery ?? "any")}${subpage}?${newParams.toString()}`;
 
     saveToHistory(searchQuery, url);
     window.location.href = url;

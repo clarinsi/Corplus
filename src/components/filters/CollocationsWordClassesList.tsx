@@ -39,7 +39,7 @@ export default function CollocationsWordClassesList({
         ],
         queryFn: async ({ signal }: { signal: AbortSignal }) =>
             axios
-                .get(`/api/filters/wordclass/collocations?lemma=${currentLemma}&${searchParams.toString()}`, { signal })
+                .get(`/api/filters/wordclass/collocations?lemma=${currentLemma}&${searchParams.toString()}`, { signal, baseURL: process.env.NEXT_PUBLIC_BASE_URL })
                 .then((res) => res.data),
     });
 

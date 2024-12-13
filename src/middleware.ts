@@ -4,11 +4,11 @@ import { locales } from "@/navigation";
 export default createMiddleware({
     locales,
     defaultLocale: "sl",
-    localePrefix: "as-needed",
+    localePrefix: "always",
     localeDetection: false,
 });
 
 export const config = {
     // Match only internationalized pathnames
-    matcher: ["/((?!api|_next|monitoring|.*\\..*).*)"],
+    matcher: ["/", "/((?!api|_next|monitoring|.*\\..*).*)"],
 };

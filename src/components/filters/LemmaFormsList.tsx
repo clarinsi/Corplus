@@ -48,7 +48,7 @@ export default function LemmaFormsList({
         ],
         queryFn: async ({ signal }: { signal: AbortSignal }) =>
             axios
-                .get(`/api/lemma-forms/${currentLemma}/count?${filteredSearchParams.toString()}`, { signal })
+                .get(`/api/lemma-forms/${currentLemma}/count?${filteredSearchParams.toString()}`, { signal, baseURL: process.env.NEXT_PUBLIC_BASE_URL })
                 .then((res) => res.data),
     });
     const mappedData: BiblFilter[] | undefined = useMemo(() => {

@@ -37,7 +37,7 @@ export default function AdvancedSearchPage() {
     const { data: firstLangFilters } = useQuery<BiblFilter[]>({
         queryKey: ["firstLangFilters"],
         queryFn: async ({ signal }: { signal: AbortSignal }) =>
-            fetch(`/api/filters/bibl/fl-global`, { signal }).then((res) => res.json()),
+            fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/filters/bibl/fl-global`, { signal }).then((res) => res.json()),
     });
 
     const [selectedSource, setSelectedSource] = useState<TextSource>("ORIG");

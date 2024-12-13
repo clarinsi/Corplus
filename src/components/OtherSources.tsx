@@ -61,7 +61,7 @@ function SloLeksSource({ currentLemma }: { currentLemma?: string }) {
     const t = useTranslations("Header.all-sources-menu.sloleks");
     const { data } = useSuspenseQuery({
         queryKey: ["sloleks-id", currentLemma],
-        queryFn: () => axios.get(`/api/sloleks/${currentLemma}`).then((res) => res.data),
+        queryFn: () => axios.get(`/api/sloleks/${currentLemma}`, { baseURL: process.env.NEXT_PUBLIC_BASE_URL }).then((res) => res.data),
     });
 
     return (
