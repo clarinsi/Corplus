@@ -43,6 +43,9 @@ export default function RootLayout({ children, params }: RootLayoutProps) {
 
     return (
         <html lang={locale} className={classes}>
+             <head>
+                <link rel="icon" href="https://viri.cjvt.si/solar/favicon.ico" />
+            </head>
             <body>
                 <Providers>
                     <NextIntlClientProvider timeZone="Europe/Ljubljana" locale={locale} messages={messages}>
