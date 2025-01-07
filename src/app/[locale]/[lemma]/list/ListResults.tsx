@@ -95,7 +95,7 @@ export default function ListResults({ currentLemma }: ListResultsProps) {
     if (error || !data) return <SearchResultsError />;
 
     const getSaveUrl = () => {
-        return `/api/list/download?locale=${locale}&${writableSearchParams.toString()}`;
+        return `${process.env.NEXT_PUBLIC_BASE_URL}/api/list/download?locale=${locale}&${writableSearchParams.toString()}`;
     };
 
     const saveBtn = (

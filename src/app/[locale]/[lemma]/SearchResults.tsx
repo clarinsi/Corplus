@@ -70,7 +70,7 @@ export default function SearchResults() {
     if (error || !data) return <SearchResultsError />;
 
     const getSaveUrl = () => {
-        return `/api/search/download?locale=${locale}&${searchParams.toString()}`;
+        return `${process.env.NEXT_PUBLIC_BASE_URL}/api/search/download?locale=${locale}&${searchParams.toString()}`;
     };
 
     const saveBtn = (

@@ -70,7 +70,7 @@ export default function CollocationResults({ currentLemma }: CollocationResultsP
     if (error || !data) return <SearchResultsError />;
 
     const getSaveUrl = () => {
-        return `/api/collocations/download?locale=${locale}&${writableSearchParams.toString()}`;
+        return `${process.env.NEXT_PUBLIC_BASE_URL}/api/collocations/download?locale=${locale}&${writableSearchParams.toString()}`;
     };
 
     const saveBtn = (
