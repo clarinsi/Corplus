@@ -96,7 +96,7 @@ function SentenceEntry({ keyword, parsedFilters, sentenceType, sentence, sentenc
         );
 
         return (
-            <span key={word.id} className={classes} title={word.id}>
+            <span key={word.id} className={classes} data-id={word.id}>
                 {punctuationRegex.test(word.text) ? "" : " "}
                 {word.text}
             </span>
