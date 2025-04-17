@@ -5,7 +5,8 @@ import Link from "next/link";
 import cjvt from "@/assets/images/cjvt-logo-red.svg";
 import clarin from "@/assets/images/clarin-logo.svg";
 import mzk from "@/assets/images/mzk-logo.svg";
-import uniLJ from "@/assets/images/unilj-logo.svg";
+import uniLJ from "@/assets/images/unilj-logo.png";
+import arisLogo from "@/assets/images/aris-logo.svg";
 import { clsx } from "clsx";
 
 export default function Footer() {
@@ -28,9 +29,15 @@ export default function Footer() {
                     </FooterCell>
 
                     <FooterCell title={t("title.supporters")}>
-                        <Link href="https://www.gov.si/drzavni-organi/ministrstva/ministrstvo-za-kulturo/">
-                            <Image src={mzk} alt={t("accessibility.mzk")} />
-                        </Link>
+                        <div className="flex h-full flex-col justify-between">
+                            <Link href="https://www.gov.si/drzavni-organi/ministrstva/ministrstvo-za-kulturo/">
+                                <Image src={mzk} alt={t("accessibility.mzk")} />
+                            </Link>
+
+                            <Link href="https://www.arrs.si/sl/">
+                                <Image src={arisLogo} alt="Aris" />
+                            </Link>
+                        </div>
                     </FooterCell>
 
                     <FooterCell title={t("title.source")}>
@@ -80,7 +87,7 @@ export default function Footer() {
 const FooterCell = ({ title, colSpan = 1, children }: { title?: string; colSpan?: number; children: ReactNode }) => {
     const dynamicClasses = clsx(
         title ? "grid-rows-[3.5rem_1fr]" : "grid-rows-1",
-        colSpan === 2 && "col-span-2 md:border-transparent lg:border-grey",
+        colSpan === 2 && "col-span-2 md:border-transparent lg:border-grey"
     );
 
     const dynamicBodyClasses = clsx(title ? "items-end justify-start" : "items-center justify-center");
