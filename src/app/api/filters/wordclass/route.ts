@@ -16,7 +16,6 @@ const cachedWordClassFilters = unstable_cache(
 export async function GET(req: NextRequest) {
     const { searchParams } = new URL(req.url);
     const parsedFilters = parseSearchParams(searchParams);
-    if (!parsedFilters.lemma) return NextResponse.json("No lemma provided", { status: 400 });
 
     const forms = await cachedWordClassFilters(parsedFilters).catch(() => undefined);
     if (!forms) return NextResponse.json("No data found", { status: 400 });

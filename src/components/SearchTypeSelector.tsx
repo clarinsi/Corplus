@@ -1,5 +1,6 @@
 "use client";
 
+import { useMemo } from "react";
 import { useTranslations } from "next-intl";
 import { SearchType } from "@/app/[locale]/Search";
 import CaretDown from "@/assets/icons/CaretDown";
@@ -17,12 +18,22 @@ interface SearchTypeSelectorProps {
 
 export default function SearchTypeSelector({ bg, size, selectedFilter, handleFilterChange }: SearchTypeSelectorProps) {
     const t = useTranslations("Search.tab");
+    const normalizedSelectedFilter: "basic" | "collocations" | "list" = useMemo(() => {
+        if (selectedFilter === "exact") return "basic";
+        return selectedFilter;
+    }, [selectedFilter]);
 
     return (
-        <FilterDropdown bg={bg} size={size} isActive={true} label={t(selectedFilter)} leadingIcon={<CaretDown />}>
+        <FilterDropdown
+            bg={bg}
+            size={size}
+            isActive={true}
+            label={t(normalizedSelectedFilter)}
+            leadingIcon={<CaretDown />}
+        >
             <MenuListItem
                 value="basic"
-                isActive={selectedFilter === "basic"}
+                isActive={selectedFilter === "basic" || selectedFilter === "exact"}
                 onClick={handleFilterChange}
                 icon={<RadioButtonIcon />}
                 activeIcon={<RadioButtonCheckedIcon />}

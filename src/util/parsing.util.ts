@@ -4,6 +4,7 @@ import {
     ADV_CONTEXT,
     ADV_FILTERS_SEPARATOR,
     ALIGN_LEFT,
+    ANA,
     COLLOCATION_WORD_CATEGORY,
     CONTEXT_WORD,
     CONTEXT_WORD_SEPARATOR,
@@ -29,6 +30,7 @@ import {
     SORT_ASC,
     SORT_BY,
     TASK_SETTING_FILTER,
+    TEXT,
     WORD_CATEGORY,
 } from "@/constants";
 import { TextSource } from "@/db/schema";
@@ -76,6 +78,8 @@ export const parseRawFilters = (rawFilters: Record<string, string>): ParsedSearc
         type: parseSearchType(rawFilters.type),
         page: parsePageNumber(rawFilters.page),
         rawQuery: decodeURIComponent(rawFilters[RAW_QUERY] || "any"),
+        text: decodeURIComponent(rawFilters[TEXT]),
+        ana: rawFilters[ANA],
         showRelative: rawFilters[SHOW_RELATIVE] == "true",
         searchSource: parseSearchSource(rawFilters[SEARCH_SOURCE]),
         showOrig: rawFilters[SHOW_ORIG] == "true",
@@ -102,7 +106,7 @@ export const parseRawFilters = (rawFilters: Record<string, string>): ParsedSearc
             ? decodeURIComponent(rawFilters[ERRORS_FILTER]).split(LIST_SEPARATOR)
             : undefined,
         excludeCategory: rawFilters[EXCLUDE_CATEGORY] !== undefined,
-        listType: rawFilters[LIST_TYPE],
+        listType: (rawFilters[LIST_TYPE] ?? "lemma") as "lemma" | "text" | "ana",
         formsFilter: rawFilters[FORMS_FILTER]
             ? decodeURIComponent(rawFilters[FORMS_FILTER]).split(LIST_SEPARATOR)
             : undefined,

@@ -9,6 +9,8 @@ export const SHOW_ORIG = "orig";
 export const SHOW_CORRECT = "correct";
 export const HIGHLIGHT_ERRORS = "highlight";
 export const ALIGN_LEFT = "left";
+export const TEXT = "tx";
+export const ANA = "ana";
 
 // Filters
 export const NO_STRING_SEARCH = undefined;

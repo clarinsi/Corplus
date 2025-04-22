@@ -33,7 +33,7 @@ export default function ListPage({ params, searchParams }: PageProps) {
             </div>
 
             <Suspense fallback={<SearchResultsLoader />}>
-                <ListResults currentLemma={currentLemma} />
+                <ListResults />
             </Suspense>
         </div>
     );

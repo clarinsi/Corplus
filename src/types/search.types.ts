@@ -9,6 +9,8 @@ export type ParsedSearchFilters = {
     type: SearchType;
     page: number;
     rawQuery: string;
+    text?: string;
+    ana?: string;
     showRelative: boolean;
     searchSource: TextSource;
     showOrig: boolean;
@@ -32,7 +34,7 @@ export type ParsedSearchFilters = {
     collocationWordCategory?: string;
     errorsFilters?: string[];
     excludeCategory?: boolean;
-    listType: string;
+    listType: "lemma" | "text" | "ana";
     formsFilter?: string[];
 };
 

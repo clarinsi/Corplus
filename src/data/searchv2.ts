@@ -10,7 +10,7 @@ import { getMappedAdvFiltersQuery } from "@/data/search";
 import { dbClient } from "@/db/db";
 import { Bibl, Err, Sentence, TextSource, Word } from "@/db/schema";
 import { ParsedSearchFilters } from "@/types/search.types";
-import { and, asc, count, eq, ilike, like, not, or } from "drizzle-orm";
+import { and, asc, count, eq, ilike, like, not, or, sql } from "drizzle-orm";
 import { PgSelect } from "drizzle-orm/pg-core";
 import { inArray } from "drizzle-orm/sql/expressions/conditions";
 
@@ -70,13 +70,24 @@ export const getWhereQuery = (
     biblOverride: any | undefined = undefined,
     aliases?: AliasContainer<typeof Word>,
 ) => {
-    const { lemma, errorsFilters, searchSource, type: searchType, formsFilter } = parsedSearchFilters;
+    const {
+        lemma,
+        errorsFilters,
+        searchSource,
+        type: searchType,
+        formsFilter,
+        ana,
+        rawQuery,
+        listType,
+        text,
+    } = parsedSearchFilters;
     const biblFilters = biblOverride !== undefined ? biblOverride : getBiblQuery2(parsedSearchFilters);
     const mappedAdvFilters = getMappedAdvFiltersQuery(
         parsedSearchFilters.wordCategory,
         parsedSearchFilters.excludeCategory,
         parsedSearchFilters.advancedFilters,
     );
+    if (ana) mappedAdvFilters.push(eq(Word.ana, `mte:${ana}`));
 
     let wordFilterQuery;
     if ((searchType === "basic" || searchType === "collocations") && lemma !== NO_STRING_SEARCH) {
@@ -87,7 +98,45 @@ export const getWhereQuery = (
     if (searchType === "list" && lemma !== NO_STRING_SEARCH) {
         // Convert wildcard characters to SQL wildcards
         const adjustedLemma = lemma[0].replaceAll("*", "%").replaceAll("?", "_");
-        wordFilterQuery = ilike(Word.text, adjustedLemma);
+        wordFilterQuery = ilike(Word.lemma, adjustedLemma);
+
+        if (listType === "lemma") {
+            // Convert wildcard characters to SQL wildcards
+            const adjustedQuery = rawQuery.replaceAll("*", "%").replaceAll("?", "_");
+
+            // Find all lemmas that match
+            wordFilterQuery = ilike(Word.lemma, adjustedQuery);
+        } else if (listType === "text") {
+            if (!lemma) throw new Error("lemma is required for text list type");
+
+            wordFilterQuery = inArray(Word.lemma, lemma);
+        } else if (listType === "ana") {
+            if (!text) throw new Error("text is required for ana list type");
+            wordFilterQuery = eq(Word.text, text);
+        } else {
+            throw new Error("Unknown list type");
+        }
+    }
+
+    if (searchType === "exact") {
+        if (lemma === undefined) throw new Error("lemma is required for exact search");
+
+        const filters = [];
+
+        if (formsFilter) {
+            for (const form of formsFilter) {
+                const lemma = form.split(" ").shift();
+
+                if (!lemma) continue;
+
+                filters.push(lemma);
+            }
+        }
+
+        wordFilterQuery = and(
+            eq(sql`lower(${Word.text})`, text ?? lemma[0]),
+            filters.length !== 0 ? inArray(Word.lemma, filters) : undefined,
+        );
     }
 
     const { context, advContext, collocationWordCategory } = parsedSearchFilters;
@@ -166,7 +215,7 @@ export const getWhereQuery = (
     }
 
     let fFilters = [];
-    if (formsFilter) {
+    if (formsFilter && searchType !== "exact") {
         for (const form of formsFilter) {
             const tmp = [];
             const split = form.split(" ");
@@ -433,7 +482,7 @@ const mapSentenceWord = (
     },
     keyword: WordData,
 ): WordData => {
-    const { id, biblId, type, ana, lemma, text, sentenceId, origErrors, corrErrors } = word;
+    const { id, type, ana, lemma, text, sentenceId, origErrors, corrErrors } = word;
     const currentErrors = type === "ORIG" ? origErrors : corrErrors;
     const keywordError = currentErrors.find((err) => err.origWordId === keyword.id || err.corrWordId === keyword.id);
     const filteredErrors = currentErrors?.filter((err) => err.type !== "ID") ?? [];

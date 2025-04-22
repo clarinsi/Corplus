@@ -1,7 +1,7 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
 import CloseIcon from "@/assets/icons/CloseIcon";
 import InformationIcon from "@/assets/icons/InformationIcon";
@@ -14,17 +14,23 @@ import IconButton from "@/design-system/button/IconButton";
 import TextButton from "@/design-system/button/TextButton";
 
 interface SearchFiltersProps {
-    currentTab: "basic" | "collocations" | "list";
+    currentTab: "basic" | "collocations" | "list" | "exact";
 }
 
 export default function SearchFilters({ currentTab }: SearchFiltersProps) {
     const [isShowingInfo, setIsShowingInfo] = useState(false);
     const tSearch = useTranslations("Search");
+    const normalizedCurrentTab: "basic" | "collocations" | "list" = useMemo(() => {
+        if (currentTab === "exact") return "basic";
+        return currentTab;
+    }, [currentTab]);
 
     const { data, isLoading, error } = useQuery<BiblFilter[]>({
         queryKey: ["firstLangFilters"],
         queryFn: async ({ signal }: { signal: AbortSignal }) =>
-            fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/filters/bibl/fl-global`, { signal }).then((res) => res.json()),
+            fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/filters/bibl/fl-global`, { signal }).then((res) =>
+                res.json(),
+            ),
     });
 
     if (isLoading) return <IndexFiltersLoader />;
@@ -46,7 +52,7 @@ export default function SearchFilters({ currentTab }: SearchFiltersProps) {
                     trailingIcon={<InformationIcon />}
                     onClick={() => setIsShowingInfo(!isShowingInfo)}
                 >
-                    {tSearch(`type.${currentTab}.using`)}
+                    {tSearch(`type.${normalizedCurrentTab}.using`)}
                 </TextButton>
             </div>
 
@@ -65,18 +71,20 @@ export default function SearchFilters({ currentTab }: SearchFiltersProps) {
                     </div>
                     <ul className="text-sm flex px-3 flex-col gap-3">
                         {tSearch
-                            .raw(`type.${currentTab}.examples`)
+                            .raw(`type.${normalizedCurrentTab}.examples`)
                             .map((el: { query: string; description: string }) => (
                                 <li key={el.query} className="flex flex-col gap-1 py-2 border-b border-static-border">
                                     <p className="font-bold text-surface-static-emphasised">{el.query}</p>
                                     <p className="text-grey" dangerouslySetInnerHTML={{ __html: el.description }}></p>
                                 </li>
                             ))}
-                        {tSearch(`type.${currentTab}.extra`) !== "null" && (
+                        {tSearch(`type.${normalizedCurrentTab}.extra`) !== "null" && (
                             <li className="flex flex-col gap-1 py-2 mt-2">
                                 <p
                                     className="text-grey"
-                                    dangerouslySetInnerHTML={{ __html: tSearch.raw(`type.${currentTab}.extra`) }}
+                                    dangerouslySetInnerHTML={{
+                                        __html: tSearch.raw(`type.${normalizedCurrentTab}.extra`),
+                                    }}
                                 ></p>
                             </li>
                         )}

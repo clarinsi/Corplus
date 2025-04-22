@@ -27,7 +27,10 @@ export async function GET(req: NextRequest, { params }: Params) {
 
     if (!searchString) return NextResponse.json("No search string provided", { status: 400 });
 
-    const forms = await cachedLemmaFormsFilters(searchString, parsedFilters).catch(() => undefined);
+    const forms = await cachedLemmaFormsFilters(searchString, parsedFilters).catch((e) => {
+        console.error(e);
+        return undefined;
+    });
     if (!forms) return NextResponse.json("No data found", { status: 400 });
     return NextResponse.json(forms);
 }

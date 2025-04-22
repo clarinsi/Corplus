@@ -21,6 +21,7 @@ import { SearchHistoryItem } from "@/types/search.types";
 
 const searchTypeMap: Record<SearchType, string> = {
     basic: "",
+    exact: "",
     collocations: "/collocation",
     list: "/list",
 };
@@ -89,7 +90,7 @@ export const executeSearch = async (
 
         const isQuoted = searchQuery.startsWith('"') && searchQuery.endsWith('"');
         if (isQuoted) {
-            searchType = "list";
+            searchType = "exact";
             skipSubpage = true;
 
             if (isMultiWord) {
@@ -112,10 +113,12 @@ export const executeSearch = async (
             newParams.set(LEMMA, lemmaParam);
         }
 
-        if ((searchType === "basic" || searchType === "collocations") && !isMultiWord) {
+        if (searchType !== "exact" && searchType !== "list" && !isMultiWord) {
             // Needed here for lemma-forms fetch request
             newParams.set("type", "basic");
-            const resp = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/lemma-forms/${lemmaParam}?${newParams.toString()}`);
+            const resp = await fetch(
+                `${process.env.NEXT_PUBLIC_BASE_URL}/api/lemma-forms/${lemmaParam}?${newParams.toString()}`,
+            );
             if (resp.status !== 200) {
                 window.location.href = `${process.env.NEXT_PUBLIC_BASE_URL}/${locale}/404`;
             }
@@ -123,12 +126,38 @@ export const executeSearch = async (
             newParams.set(LEMMA, lemmaForms.map(({ lemma }) => lemma).join(ADV_FILTERS_SEPARATOR));
         }
 
-        if (searchType === "basic" && isMultiWord) {
+        if (searchType === "list" && !isMultiWord) {
+            // Needed here for lemma-forms fetch request
+            newParams.set("type", "list");
+            newParams.set(RAW_QUERY, encodeURIComponent(lemmaParam));
+
+            const resp = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/lemma-forms/${encodeURIComponent(lemmaParam)}/?${newParams.toString()}`);
+
+            if (resp.status !== 200) {
+                window.location.href = `${process.env.NEXT_PUBLIC_BASE_URL}/${locale}/404`;
+                return;
+            }
+
+            const lemmaForms = (await resp.json()) as LemmaForm[];
+            const first = lemmaForms.at(0);
+
+            if (!first) {
+                window.location.href = `${process.env.NEXT_PUBLIC_BASE_URL}/${locale}/404`;
+                return;
+            }
+
+            newParams.set(LEMMA, first.lemma);
+        }
+
+        if (searchType !== "list" && searchType !== "exact" && isMultiWord) {
             const words = searchQuery.split(" ");
 
-            const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/lemma-forms/bulk/${words.join("/")}?${newParams.toString()}`);
+            const response = await fetch(
+                `${process.env.NEXT_PUBLIC_BASE_URL}/api/lemma-forms/bulk/${words.join("/")}?${newParams.toString()}`,
+            );
             if (response.status !== 200) {
                 window.location.href = `${process.env.NEXT_PUBLIC_BASE_URL}/${locale}/404`;
+                return;
             }
             const json: LemmaFormCount[][] = await response.json();
             const primaryLemmas = json[0].map(({ lemma }) => lemma).join(ADV_FILTERS_SEPARATOR);

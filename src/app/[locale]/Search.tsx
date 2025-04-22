@@ -16,7 +16,7 @@ import TextButton from "@/design-system/button/TextButton";
 import { parseSearchSource } from "@/util/parsing.util";
 import { executeSearch } from "@/util/search.util";
 
-export type SearchType = "basic" | "collocations" | "list";
+export type SearchType = "basic" | "collocations" | "list" | "exact";
 export type WordSearchMode = "lemma" | "text";
 
 export default function Search() {

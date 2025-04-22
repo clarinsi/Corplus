@@ -1,7 +1,7 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
-import { Suspense, useState } from "react";
+import { Suspense, useMemo, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
 import ListEntry from "@/app/[locale]/[lemma]/list/ListEntry";
@@ -11,49 +11,91 @@ import SaveIcon from "@/assets/icons/SaveIcon";
 import SearchResultsError from "@/components/SearchResultsError";
 import SortableHeader from "@/components/SortableHeader";
 import SearchResultsLoader from "@/components/loaders/SearchResultsLoader";
-import { LIST_TYPE, SORT_ASC, SORT_BY } from "@/constants";
+import { LEMMA, LIST_TYPE, SORT_ASC, SORT_BY, TEXT } from "@/constants";
 import { ListStats } from "@/data/list";
 import PaginateControl from "@/design-system/PaginateControl";
 import TextButton from "@/design-system/button/TextButton";
+import { usePathname, useRouter } from "@/navigation";
 import { parseSearchParams } from "@/util/parsing.util";
+import { createUrl } from "@/util/util";
 import axios from "axios";
 import { clsx } from "clsx";
 
-interface ListResultsProps {
-    currentLemma: string;
-}
-
-export default function ListResults({ currentLemma }: ListResultsProps) {
-    const locale = useLocale();
+export default function ListResults() {
     const t = useTranslations("List");
+    const locale = useLocale();
+    const router = useRouter();
     const searchParams = useSearchParams();
-    const [sortBy, setSortBy] = useState<string | undefined>();
-    const [selectedTab, setSelectedTab] = useState<"lemma" | "text" | "ana">("lemma");
-    const handleSelectTab = (tab: "lemma" | "text" | "ana") => {
-        setSortBy(undefined);
-        setSelectedTab(tab);
-    };
-    const [sortAsc, setSortAsc] = useState<boolean>(false);
-    const handleSortClick = (sortBy: string, sortAsc: boolean) => {
-        setSortBy(sortBy);
-        setSortAsc(sortAsc);
-    };
+    const pathname = usePathname();
+    const parsedFilters = useMemo(() => parseSearchParams(searchParams), [searchParams]);
 
-    const writableSearchParams = new URLSearchParams(searchParams.toString());
-    writableSearchParams.set(LIST_TYPE, selectedTab);
-    if (sortBy) {
-        writableSearchParams.set(SORT_BY, sortBy);
-    } else {
-        writableSearchParams.delete(SORT_BY);
+    const [selectedLemma, setSelectedLemma] = useState<string | undefined>();
+    const [selectedText, setSelectedText] = useState<string | undefined>();
+
+    const tableWrapperClasses = useMemo(
+        () =>
+            clsx(
+                "border-b border-static-border grid",
+                parsedFilters.listType === "lemma" && "grid-cols-2",
+                parsedFilters.listType === "text" && "grid-cols-4",
+                parsedFilters.listType === "ana" && "grid-cols-4",
+            ),
+        [parsedFilters.listType],
+    );
+
+    function handleSelectTab(tab: "lemma" | "text" | "ana") {
+        const newParams = new URLSearchParams(searchParams);
+        newParams.delete(SORT_ASC);
+        newParams.delete(SORT_BY);
+        newParams.set(LIST_TYPE, tab);
+
+        const lemma = selectedLemma ?? parsedFilters.lemma![0];
+
+        if (tab === "text" && lemma) {
+            newParams.set(LEMMA, lemma);
+        }
+
+        const text = selectedText ?? data?.data.at(0)?.text;
+
+        if (tab === "ana" && text) {
+            newParams.set(TEXT, text);
+        } else {
+            newParams.delete(TEXT);
+            setSelectedText(undefined);
+        }
+
+        if (tab === "lemma") {
+            newParams.delete(TEXT);
+        }
+
+        router.push(createUrl(pathname, newParams), { scroll: false });
     }
 
-    if (sortAsc) {
-        writableSearchParams.set(SORT_ASC, "true");
-    } else {
-        writableSearchParams.delete(SORT_ASC);
+    function handleSortClick(newSortBy: string, newSortAsc: boolean) {
+        const newParams = new URLSearchParams(searchParams);
+        if (!newSortBy) {
+            newParams.delete(SORT_BY);
+        } else {
+            newParams.set(SORT_BY, newSortBy);
+        }
+
+        if (!newSortAsc) {
+            newParams.delete(SORT_ASC);
+        } else {
+            newParams.set(SORT_ASC, "true");
+        }
+
+        router.push(createUrl(pathname, newParams), { scroll: false });
     }
 
-    const parsedFilters = parseSearchParams(writableSearchParams);
+    function handleAnaClick() {
+        if (parsedFilters.listType === "ana") {
+            handleSelectTab("text");
+        } else {
+            handleSelectTab("ana");
+        }
+    }
+
     const { data, isLoading, error } = useQuery<PaginatedResponse<ListStats[]>>({
         queryKey: [
             "search-results",
@@ -68,34 +110,25 @@ export default function ListResults({ currentLemma }: ListResultsProps) {
             parsedFilters.errorsFilters,
             parsedFilters.wordCategory,
             parsedFilters.formsFilter,
-            selectedTab,
-            sortBy,
-            sortAsc,
+            parsedFilters.listType,
+            parsedFilters.sortBy,
+            parsedFilters.sortAsc,
+            parsedFilters.text,
         ],
         queryFn: async ({ signal }: { signal: AbortSignal }) =>
-            axios.get(`/api/list?${writableSearchParams.toString()}`, { signal, baseURL: process.env.NEXT_PUBLIC_BASE_URL }).then((res) => res.data),
+            axios
+                .get(`/api/list?${searchParams.toString()}`, {
+                    signal,
+                    baseURL: process.env.NEXT_PUBLIC_BASE_URL,
+                })
+                .then((res) => res.data),
     });
-
-    const handleAnaClick = () => {
-        if (selectedTab === "ana") {
-            handleSelectTab("text");
-        } else {
-            handleSelectTab("ana");
-        }
-    };
-
-    const tableWrapperClasses = clsx(
-        "border-b border-static-border grid",
-        selectedTab === "lemma" && "grid-cols-2",
-        selectedTab === "text" && "grid-cols-4",
-        selectedTab === "ana" && "grid-cols-4",
-    );
 
     if (isLoading) return <SearchResultsLoader hideViewControl={true} />;
     if (error || !data) return <SearchResultsError />;
 
     const getSaveUrl = () => {
-        return `${process.env.NEXT_PUBLIC_BASE_URL}/api/list/download?locale=${locale}&${writableSearchParams.toString()}`;
+        return `${process.env.NEXT_PUBLIC_BASE_URL}/api/list/download?locale=${locale}&${searchParams.toString()}`;
     };
 
     const saveBtn = (
@@ -125,7 +158,7 @@ export default function ListResults({ currentLemma }: ListResultsProps) {
                 <div className="flex items-center gap-1">
                     <TextButton
                         bg="light"
-                        hiearchy={selectedTab === "lemma" ? "primary" : "secondary"}
+                        hiearchy={parsedFilters.listType === "lemma" ? "primary" : "secondary"}
                         size="small"
                         onClick={() => handleSelectTab("lemma")}
                     >
@@ -133,19 +166,23 @@ export default function ListResults({ currentLemma }: ListResultsProps) {
                     </TextButton>
                     <TextButton
                         bg="light"
-                        hiearchy={selectedTab === "text" || selectedTab === "ana" ? "primary" : "secondary"}
+                        hiearchy={
+                            parsedFilters.listType === "text" || parsedFilters.listType === "ana"
+                                ? "primary"
+                                : "secondary"
+                        }
                         size="small"
                         onClick={() => handleSelectTab("text")}
                     >
                         {t("btn.all-forms")}
                     </TextButton>
                 </div>
-                {(selectedTab === "text" || selectedTab === "ana") && (
+                {(parsedFilters.listType === "text" || parsedFilters.listType === "ana") && (
                     <TextButton
                         bg="light"
-                        hiearchy={selectedTab === "ana" ? "primary" : "secondary"}
+                        hiearchy={parsedFilters.listType === "ana" ? "primary" : "secondary"}
                         size="small"
-                        trailingIcon={selectedTab === "ana" ? <CheckedBoxIcon /> : <CheckBoxIcon />}
+                        trailingIcon={parsedFilters.listType === "ana" ? <CheckedBoxIcon /> : <CheckBoxIcon />}
                         onClick={handleAnaClick}
                     >
                         {t("btn.ana")}
@@ -155,23 +192,23 @@ export default function ListResults({ currentLemma }: ListResultsProps) {
 
             <div className="grow mx-4">
                 <div className={tableWrapperClasses}>
-                    {(selectedTab === "text" || selectedTab === "ana") && (
+                    {(parsedFilters.listType === "text" || parsedFilters.listType === "ana") && (
                         <SortableHeader
                             text={t("table.form")}
                             sortBy="text"
-                            currentSortBy={sortBy}
-                            currentSortAsc={sortAsc}
+                            currentSortBy={parsedFilters.sortBy}
+                            currentSortAsc={parsedFilters.sortAsc}
                             onSortClick={handleSortClick}
                         />
                     )}
                     <SortableHeader
                         text={t("table.basic-form")}
                         sortBy="lemma"
-                        currentSortBy={sortBy}
-                        currentSortAsc={sortAsc}
+                        currentSortBy={parsedFilters.sortBy}
+                        currentSortAsc={parsedFilters.sortAsc}
                         onSortClick={handleSortClick}
                     />
-                    {selectedTab === "ana" && (
+                    {parsedFilters.listType === "ana" && (
                         <SortableHeader
                             text={t("table.ana")}
                             sortBy="none"
@@ -183,17 +220,17 @@ export default function ListResults({ currentLemma }: ListResultsProps) {
                     <SortableHeader
                         text={t("table.count")}
                         sortBy="count"
-                        currentSortBy={sortBy}
-                        currentSortAsc={sortAsc}
+                        currentSortBy={parsedFilters.sortBy}
+                        currentSortAsc={parsedFilters.sortAsc}
                         onSortClick={handleSortClick}
                         alignRight={true}
                     />
-                    {selectedTab === "text" && (
+                    {parsedFilters.listType === "text" && (
                         <SortableHeader
                             text={t("table.err-count")}
                             sortBy="errCount"
-                            currentSortBy={sortBy}
-                            currentSortAsc={sortAsc}
+                            currentSortBy={parsedFilters.sortBy}
+                            currentSortAsc={parsedFilters.sortAsc}
                             onSortClick={handleSortClick}
                             alignRight={true}
                         />
@@ -203,10 +240,13 @@ export default function ListResults({ currentLemma }: ListResultsProps) {
                     <ListEntry
                         key={`${coll.lemma}${coll.text}${coll.ana}`}
                         stats={coll}
-                        currentLemma={currentLemma}
-                        selectedTab={selectedTab}
+                        selectedTab={parsedFilters.listType}
                         withErrors={parsedFilters.texts === "with-error"}
                         searchSource={parsedFilters.searchSource}
+                        selectedLemma={selectedLemma}
+                        selectedText={selectedText}
+                        setSelectedLemma={setSelectedLemma}
+                        setSelectedText={setSelectedText}
                     />
                 ))}
             </div>
