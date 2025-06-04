@@ -1,4 +1,4 @@
-# Kost Concordancer
+# Corplus: A concordancer for corpora with language corrections
 
 ## Deployment
 
