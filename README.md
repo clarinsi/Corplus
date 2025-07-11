@@ -34,3 +34,10 @@ If you are running a docker container, you can use the `import-prod.sh` script t
 ```bash
 sh import-prod.sh
 ```
+
+## Acknowledgements
+
+Corpus was developed under the umbrella of two project:
+- The initial version was prepared with financial aid from the Ministry of Culture in a project "KOST/KUUS" led by Mojca Stritar Kučuk (https://www.cjvt.si/korpus-kost/en/projects/).
+- The finalisation of the tool and its adaptation to the Šolar corpus was financed by the Slovenian Research and Innovation Agency in a project "Empirical foundations for digitally-supported development of writing skills (J7-3159)" led by Špela Arhar Holdt (https://www.cjvt.si/prop/en/.
+- The tool was developed by RSLabs agency (https://rs-labs.si/).
