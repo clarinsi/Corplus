@@ -1,5 +1,11 @@
 # Corplus: A concordancer for corpora with language corrections
 
+## About
+
+Corplus is a specialised concordancer developed for exploring corpora that contain annotated language corrections. Unlike typical concordancers, Corplus enables the retrieval and comparison of both erroneous and corrected forms within a text. This makes it particularly useful for research in first and second language acquisition, learner corpus analysis, and language teaching.
+
+The tool has already been used with two Slovene corpora: the KOST learner corpus (https://viri.cjvt.si/kost/en/) and the Šolar developmental corpus (https://viri.cjvt.si/solar/en/). Its flexible design allows it to be adapted for different languages and corpus types.
+
 ## Deployment
 
 1. Copy `docker-compose-prod.yml` and `cli/import-prod.sh` to your server
