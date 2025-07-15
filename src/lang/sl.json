@@ -26,7 +26,7 @@
     "SearchInfo": {
         "ORIG": "iskanje po izvornih besedilih",
         "CORR": "iskanje po popravljenih besedilih",
-        "size": "velikost korpusa: {count} pojavnic",
+        "size": "velicorplus korpusa: {count} pojavnic",
         "error": "napaka pri nalaganju podatkov"
     },
     "Header": {
@@ -354,7 +354,7 @@
                 "s": "Srednji"
             },
             "Clitic": {
-                "title": "Naslonskost",
+                "title": "Naslonscorplus",
                 "k": "Klitična",
                 "z": "Navezna"
             },
@@ -557,13 +557,13 @@
         "corr": "Popravljeno"
     },
     "Export": {
-        "filename": "kost",
+        "filename": "corplus",
         "basic": "iskanje",
         "collocation": "okolica",
         "list": "seznam",
         "title": "Kost 2.0",
         "corpus": "Korpus:",
-        "size": "Velikost korpusa:",
+        "size": "Velicorplus korpusa:",
         "searchSource": {
             "type": "Vir iskanja:",
             "ORIG": "izvorna besedila",

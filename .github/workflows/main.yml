@@ -35,7 +35,7 @@ jobs:
           cache-to: type=gha,mode=max
           file: Dockerfile
           push: true
-          tags: ghcr.io/cjvtul/kost-concordancer:prod
+          tags: ghcr.io/cjvtul/corplus-concordancer:prod
           build-args: |
             NEXT_PUBLIC_VERSION_REF=${{ env.SHA }}
-            NEXT_PUBLIC_BASE_URL=/kost
+            NEXT_PUBLIC_BASE_URL=/corplus

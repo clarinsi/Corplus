@@ -1,1 +1,1 @@
-docker run -e KOST_DATABASE_URL=postgres://postgres:postgres@postgres:5432/kost-concordancer --network=kost-concordancer-network -v "./import:/app/import" -it ghcr.io/cjvtul/kost-concordancer:prod node dist/import.mjs
+docker run -e CORPLUS_DATABASE_URL=postgres://postgres:postgres@postgres:5432/corplus-concordancer --network=corplus-concordancer-network -v "./import:/app/import" -it ghcr.io/cjvtul/corplus-concordancer:prod node dist/import.mjs

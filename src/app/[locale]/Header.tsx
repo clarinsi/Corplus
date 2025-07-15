@@ -6,7 +6,7 @@ import Image from "next/image";
 import LangSwitcher from "@/app/[locale]/LangSwitcher";
 import { LoadingIcon } from "@/assets/icons/LoadingIcon";
 import SwitcherIcon from "@/assets/icons/SwitcherIcon";
-import kostLogo from "@/assets/images/kost-logo.svg";
+import corplusLogo from "@/assets/images/corplus-logo.svg";
 import HeaderSearchBar from "@/components/HeaderSearchBar";
 import OtherSources from "@/components/OtherSources";
 import IconButton from "@/design-system/button/IconButton";
@@ -29,7 +29,7 @@ export default function Header({ lemma, showSearch = false, showAllSources = fal
             <header className="py-2 bg-surface-static-emphasised">
                 <div className="flex justify-between items-center px-8 max-w-custom mx-auto">
                     <Link href={"/"}>
-                        <Image src={kostLogo} height={30} alt="cjvt logo" priority={true} />
+                        <Image src={corplusLogo} height={30} alt="cjvt logo" priority={true} />
                     </Link>
 
                     {showSearch && (
@@ -54,7 +54,7 @@ export default function Header({ lemma, showSearch = false, showAllSources = fal
                     <div className="justify-self-end flex items-center gap-2 text-white">
                         <TextButton
                             type="link"
-                            href="https://www.cjvt.si/korpus-kost/"
+                            href="https://www.cjvt.si/korpus-corplus/"
                             bg="emphasised"
                             hiearchy="ghost"
                             size="medium"

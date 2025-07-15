@@ -15,9 +15,9 @@ import postgres from "postgres";
 import XmlStream from "xml-stream";
 
 const importDir = "./import/";
-const origFile = importDir + "kost-orig.xml";
-const errFile = importDir + "kost-errs.xml";
-const corrFile = importDir + "kost-corr.xml";
+const origFile = importDir + "corplus-orig.xml";
+const errFile = importDir + "corplus-errs.xml";
+const corrFile = importDir + "corplus-corr.xml";
 
 const zeroPadId = (id: string) => {
     // Use a regular expression to match "s/t." followed by numbers
@@ -486,9 +486,9 @@ const getCorpusWithErrorsSize = async (type: TextSource) => {
 };
 
 async function main() {
-    const databaseUrl = process.env.KOST_DATABASE_URL;
+    const databaseUrl = process.env.CORPLUS_DATABASE_URL;
     if (!databaseUrl) {
-        console.error(chalk.red("KOST_DATABASE_URL not set"));
+        console.error(chalk.red("CORPLUS_DATABASE_URL not set"));
         return;
     }
 

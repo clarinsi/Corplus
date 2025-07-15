@@ -1,19 +1,19 @@
 version: '3.8'
 services:
-  kost:
-    image: ghcr.io/cjvtul/kost-concordancer:prod
-    container_name: kost
+  corplus:
+    image: ghcr.io/cjvtul/corplus-concordancer:prod
+    container_name: corplus
     restart: always
     volumes:
       - ./import:/app/import
     environment:
-      - KOST_DATABASE_URL=postgres://postgres:postgres@postgres:5432/kost-concordancer
+      - CORPLUS_DATABASE_URL=postgres://postgres:postgres@postgres:5432/corplus-concordancer
     ports:
       - "3030:3000"
     depends_on:
       - postgres
     networks:
-      - kost-concordancer-network
+      - corplus-concordancer-network
   postgres:
     image: postgres:16-alpine
     shm_size: 4g
@@ -21,16 +21,16 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=kost-concordancer
+      - POSTGRES_DB=corplus-concordancer
     volumes:
-      - postgres-kost:/var/lib/postgresql/data
+      - postgres-corplus:/var/lib/postgresql/data
     command: [
       "postgres",
       "-c",
       "statement_timeout=60000",
     ]
     networks:
-      - kost-concordancer-network
+      - corplus-concordancer-network
   watchtower:
     image: containrrr/watchtower
     volumes:
@@ -38,7 +38,7 @@ services:
       - /home/rokurbanc/.docker/config.json:/config.json
     command: --interval 60 --cleanup
 volumes:
-  postgres-kost:
+  postgres-corplus:
     driver: local
 networks:
-  kost-concordancer-network:
+  corplus-concordancer-network:

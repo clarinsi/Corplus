@@ -557,7 +557,7 @@
         "corr": "Corrected"
     },
     "Export": {
-        "filename": "kost",
+        "filename": "corplus",
         "basic": "search",
         "collocation": "collocations",
         "list": "list",

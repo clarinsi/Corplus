@@ -4,7 +4,7 @@
 
 Corplus is a specialised concordancer developed for exploring corpora that contain annotated language corrections. Unlike typical concordancers, Corplus enables the retrieval and comparison of both erroneous and corrected forms within a text. This makes it particularly useful for research in first and second language acquisition, learner corpus analysis, and language teaching.
 
-The tool has already been used with two Slovene corpora: the KOST learner corpus (https://viri.cjvt.si/kost/en/) and the Šolar developmental corpus (https://viri.cjvt.si/solar/en/). Its flexible design allows it to be adapted for different languages and corpus types.
+The tool has already been used with two Slovene corpora: the CORPLUS learner corpus (https://viri.cjvt.si/corplus/en/) and the Šolar developmental corpus (https://viri.cjvt.si/solar/en/). Its flexible design allows it to be adapted for different languages and corpus types.
 
 ## Deployment
 
@@ -15,13 +15,13 @@ The tool has already been used with two Slovene corpora: the KOST learner corpus
 
 ## Importing data
 
-Before importing make sure the `KOST_DATABASE_URL` environment variable is set and databse is running.
+Before importing make sure the `CORPLUS_DATABASE_URL` environment variable is set and databse is running.
 
 Place files in the `import` directory.
 The following files are required:
-- `kost-corr.xml`
-- `kost-errs.xml`
-- `kost-orig.xml`
+- `corplus-corr.xml`
+- `corplus-errs.xml`
+- `corplus-orig.xml`
 
 If you are developing locally, you can use `pnpm import` script to import the data.
 
@@ -38,6 +38,6 @@ sh import-prod.sh
 ## Acknowledgements
 
 Corpus was developed under the umbrella of two projects:
-- The initial version was prepared with financial aid from the Ministry of Culture in a project "KOST/KUUS"(https://www.cjvt.si/korpus-kost/en/projects/).
+- The initial version was prepared with financial aid from the Ministry of Culture in a project "CORPLUS/KUUS"(https://www.cjvt.si/korpus-corplus/en/projects/).
 - The finalisation of the tool and its adaptation to the Šolar corpus was financed by the Slovenian Research and Innovation Agency in a project "Empirical foundations for digitally-supported development of writing skills (J7-3159)"(https://www.cjvt.si/prop/en/).
 - The UI was designed by Gašper Uršič (https://www.gasperursic.com/) and developed by RSLabs agency (https://rs-labs.si/).

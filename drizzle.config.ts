@@ -6,6 +6,6 @@ export default defineConfig({
     out: "./drizzle/migrations",
     dialect: "postgresql",
     dbCredentials: {
-        url: process.env.KOST_DATABASE_URL!,
+        url: process.env.CORPLUS_DATABASE_URL!,
     },
 });
