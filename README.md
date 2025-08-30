@@ -17,7 +17,7 @@ The tool has already been used with two Slovene corpora: the KOST learner corpus
 
 Before importing make sure the `CORPLUS_DATABASE_URL` environment variable is set and databse is running.
 
-Place files in the `import` directory.
+Place files in the `import` directory (sample files of the KOST corpus are provided there).
 The following files are required:
 - `corplus-corr.xml`
 - `corplus-errs.xml`
