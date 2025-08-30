@@ -6,7 +6,7 @@ import Image from "next/image";
 import LangSwitcher from "@/app/[locale]/LangSwitcher";
 import { LoadingIcon } from "@/assets/icons/LoadingIcon";
 import SwitcherIcon from "@/assets/icons/SwitcherIcon";
-import corplusLogo from "@/assets/images/corplus-logo.svg";
+import corplusLogo from "@/assets/images/corpus-logo.svg";
 import HeaderSearchBar from "@/components/HeaderSearchBar";
 import OtherSources from "@/components/OtherSources";
 import IconButton from "@/design-system/button/IconButton";

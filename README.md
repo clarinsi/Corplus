@@ -6,6 +6,8 @@ Corplus is a specialised concordancer developed for exploring corpora that conta
 
 The tool has already been used with two Slovene corpora: the KOST learner corpus (https://viri.cjvt.si/kost/en/) and the Šolar developmental corpus (https://viri.cjvt.si/solar/en/). Its flexible design allows it to be adapted for different languages and corpus types.
 
+In this repository, Corplus interface is similar to the one used for the Kost learner corpus. You can adapt it to your corpus and design, however make sure to include proper acknowledgment and cite the Corplus tool.
+
 ## Deployment
 
 1. Copy `docker-compose-prod.yml` and `cli/import-prod.sh` to your server
