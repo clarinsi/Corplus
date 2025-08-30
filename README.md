@@ -36,6 +36,9 @@ If you are running a docker container, you can use the `import-prod.sh` script t
 ```bash
 sh import-prod.sh
 ```
+## How to cite
+
+Kosem, I., Arhar Holdt, Š., Stritar Kučuk, M. & Urbanc, R. (2025). Corpus: a concordancer for corpora with language corrections. Ljubljana: Ljubljana University Press.
 
 ## Acknowledgements
 
