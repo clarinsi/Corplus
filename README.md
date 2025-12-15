@@ -42,7 +42,7 @@ Kosem, I., Arhar Holdt, Š., Stritar Kučuk, M. & Urbanc, R. (2025). Corplus: a 
 
 ## Acknowledgements
 
-Corpus was developed under the umbrella of two projects:
+Corplus was developed under the umbrella of two projects:
 - The initial version was prepared with financial aid from the Ministry of Culture in a project "KOST/KUUS"(https://www.cjvt.si/korpus-kost/en/projects/).
 - The finalisation of the tool and its adaptation to the Šolar corpus was financed by the Slovenian Research and Innovation Agency in a project "Empirical foundations for digitally-supported development of writing skills (J7-3159)"(https://www.cjvt.si/prop/en/).
 - The UI was designed by Gašper Uršič (https://www.gasperursic.com/) and developed by RSLabs agency (https://rs-labs.si/).
