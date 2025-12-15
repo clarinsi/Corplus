@@ -38,7 +38,7 @@ sh import-prod.sh
 ```
 ## How to cite
 
-Kosem, I., Arhar Holdt, Š., Stritar Kučuk, M. & Urbanc, R. (2025). Corpus: a concordancer for corpora with language corrections. Ljubljana: Ljubljana University Press.
+Kosem, I., Arhar Holdt, Š., Stritar Kučuk, M. & Urbanc, R. (2025). Corplus: a concordancer for corpora with language corrections. Ljubljana: Ljubljana University Press.
 
 ## Acknowledgements
 
