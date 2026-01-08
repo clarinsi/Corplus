@@ -42,26 +42,26 @@ Kosem, I., Arhar Holdt, Š., Stritar Kučuk, M. & Urbanc, R. (2025). Corplus 1.0
 
 ## Impressum
 
-Corplus 1.0
+Corplus 1.0  
 Concordancer for corpora with language corrections
 
-Ljubljana, 2025
-CLARIN.SI data & tools
+Ljubljana, 2025  
+CLARIN.SI data & tools  
 ISSN 2820-4042
 
-Authors:
-Iztok Kosem
-Špela Arhar Holdt
-Mojca Stritar Kučuk
+**Authors**  
+Iztok Kosem  
+Špela Arhar Holdt  
+Mojca Stritar Kučuk  
 Rok Urbanc
 
-Interface development
+**Interface development**  
 RSLabs d.o.o.
 
-Issued by
+**Issued by**  
 Centre for Language Resources and Technologies, University of Ljubljana, Faculty of Arts
 
-For the issuer
+**For the issuer**  
 Mojca Schlamberger Brezar, dean of the Faculty of Arts
 
 ## Acknowledgements
