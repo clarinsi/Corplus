@@ -38,8 +38,7 @@ sh import-prod.sh
 ```
 ## How to cite
 
-Kosem, I., Arhar Holdt, Š., Stritar Kučuk, M. & Urbanc, R. (2025). Corplus 1.0: a concordancer for corpora with language corrections. Ljubljana: Centre for Language Resources and Technologies, University of Ljubljana, Faculty of Arts. CLARIN.SI data & tools,  
-ISSN 2820-4042. https://github.com/clarinsi/Corplus.
+Kosem, I., Arhar Holdt, Š., Stritar Kučuk, M. & Urbanc, R. (2025). Corplus 1.0: a concordancer for corpora with language corrections. Ljubljana: Centre for Language Resources and Technologies, University of Ljubljana, Faculty of Arts. CLARIN.SI data & tools, ISSN 2820-4042. https://github.com/clarinsi/Corplus.
 
 ## Impressum
 
