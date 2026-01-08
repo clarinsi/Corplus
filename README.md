@@ -1,4 +1,4 @@
-# Corplus: A concordancer for corpora with language corrections
+# Corplus 1.0: A concordancer for corpora with language corrections
 
 ## About
 
@@ -38,7 +38,31 @@ sh import-prod.sh
 ```
 ## How to cite
 
-Kosem, I., Arhar Holdt, Š., Stritar Kučuk, M. & Urbanc, R. (2025). Corplus: a concordancer for corpora with language corrections. Ljubljana: Ljubljana University Press.
+Kosem, I., Arhar Holdt, Š., Stritar Kučuk, M. & Urbanc, R. (2025). Corplus 1.0: a concordancer for corpora with language corrections. Ljubljana: Ljubljana University Press.
+
+## Impressum
+
+Corplus 1.0
+Concordancer for corpora with language corrections
+
+Ljubljana, 2025
+CLARIN.SI data & tools
+ISSN 2820-4042
+
+Authors:
+Iztok Kosem
+Špela Arhar Holdt
+Mojca Stritar Kučuk
+Rok Urbanc
+
+Interface development
+RSLabs d.o.o.
+
+Issued by
+Centre for Language Resources and Technologies, University of Ljubljana, Faculty of Arts
+
+For the issuer
+Mojca Schlamberger Brezar, dean of the Faculty of Arts
 
 ## Acknowledgements
 
